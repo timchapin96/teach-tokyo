@@ -22,6 +22,12 @@ class StudentListsController < ApplicationController
     @student_list = StudentList.find(params[:id])
   end
 
+  def destroy
+    @student_list = StudentList.find(params[:id])
+    @student_list.destroy
+    redirect_to student_lists_path, status: :see_other
+  end
+
   def student_list_params
     params.require(:student_list).permit(:list_name)
   end

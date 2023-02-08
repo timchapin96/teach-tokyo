@@ -6,3 +6,7 @@
 
 <%= link_to "Add Student", new_student_list_student_path(params[:id]), class: "btn btn-success" %>
 <%= link_to "Back", student_lists_path, class: "btn btn-success" %>
+<%= link_to "Delete",
+    student_list_path(params[:id]),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"
+  %>
