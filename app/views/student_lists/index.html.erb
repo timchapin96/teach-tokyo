@@ -1,1 +1,7 @@
 <h1>Student_list_index</h1>
+<% @student_lists.each do |list| %>
+  <%= link_to student_list_path(list) do %>
+    <p><%= list.list_name %></p>
+  <% end %>
+
+<% end %>

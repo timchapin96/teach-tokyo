@@ -1,0 +1,8 @@
+<h1>Show</h1>
+
+<% @student_list.students.each do |student| %>
+  <h4><%= student.name %></h4>
+<% end %>
+
+<%= link_to "Add Student", new_student_list_student_path(params[:id]), class: "btn btn-success" %>
+<%= link_to "Back", student_lists_path, class: "btn btn-success" %>
