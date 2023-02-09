@@ -1,0 +1,39 @@
+.cards_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 400px;
+  margin: 15px;
+  box-shadow: 1px 2px 5px 0px #6a6969;
+  border-radius: 10px;
+}
+.card_banner {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-image: url(https://images.unsplash.com/photo-1581078426770-6d336e5de7bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  height: 100%;
+  object-fit: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.card_content {
+  text-align: center;
+  text-shadow: 0px 2px 3px #b2b2b2;
+}
+.card_header {
+  padding: 10px 0;
+
+}
+
+.card_footer {
+  align-self: center;
+  padding-bottom: 15px;
+}

@@ -1,8 +1,20 @@
-<h1>Student_list_index</h1>
-<% @student_lists.each do |list| %>
-  <%= link_to student_list_path(list) do %>
-    <p><%= list.list_name %></p>
+<h1 class="student_lists_title">Your Student Lists</h1>
+<div class="cards_container">
+  <% @student_lists.each do |list| %>
+    <div class="card">
+      <div class="card_content">
+        <div class="card_banner"></div>
+        <div class="card_header">
+          <h3><strong><%= list.list_name %></strong></h3>
+        </div>
+        <div class="card_description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <div class="card_footer">
+        <%= link_to "View List", student_list_path(list), class: "btn btn-success" %>
+      </div>
+    </div>
   <% end %>
-
-<% end %>
+</div>
 <%= link_to "New List", new_student_list_path, class:"btn btn-success" %>

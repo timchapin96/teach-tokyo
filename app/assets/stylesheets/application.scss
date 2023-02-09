@@ -1,7 +1,4 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
+
 
 // Graphical variables
 @import "config/fonts";
@@ -15,3 +12,4 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "student_lists/index";
