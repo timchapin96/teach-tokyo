@@ -21,6 +21,17 @@ class StudentListsController < ApplicationController
   def show
     @student_list = StudentList.find(params[:id])
   end
+  def edit
+    @student_list = StudentList.find(params[:id])
+  end
+  def update
+    @student_list = StudentList.find(params[:id])
+    if @student_list.update(student_list_params)
+      redirect_to student_lists_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def destroy
     @student_list = StudentList.find(params[:id])
