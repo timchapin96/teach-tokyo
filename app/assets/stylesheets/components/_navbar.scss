@@ -1,14 +1,81 @@
-.nav_bar_avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
 }
-.user_links {
+
+a:hover {
+  color: whitesmoke;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      text-shadow: 1px 0px 5px white;
+  }
+
+  30% {
+      text-shadow: 2px 0px 3px white;
+  }
+
+  50% {
+      text-shadow: 3px 0px 2px white;
+  }
+
+  70% {
+      text-shadow: 2px 0px 3px white;
+  }
+
+  100% {
+      text-shadow: 1px 0px 5px white;
+  }
+}
+
+/* NavBar style */
+nav {
+  overflow: visible;
+  background-color:cadetblue;
+  box-shadow: 0px 5px 10px grey;
+}
+.nav-elements {
   display: flex;
+  justify-content: center;
   align-items: center;
+  height: 64px;
+  font-size: 20px;
+  text-shadow: 0px 2px 3px #b2b2b2;
+  width: auto;
+  margin: 0;
+  list-style-type: none;
+  color: whitesmoke;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+}
+.navbar-links a {
   padding: 10px;
 }
-.user_profile_links{
-  text-decoration: none;
-  color: black;
+.profile {
+  position: absolute;
+  top:inherit;
+  right: 0;
+  padding: 0 10px;
 }
+.avatar {
+  width: 50px;
+  height: 50px;
+  box-shadow: 1px 2px 5px 0px #6a6969;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.logo img {
+  box-sizing: border-box;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+}
+
+/* End of Navbar Style*/

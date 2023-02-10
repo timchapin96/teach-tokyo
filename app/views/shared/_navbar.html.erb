@@ -1,22 +1,25 @@
-<!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-  <div class="navbar-brand">
-    <%= link_to root_path do%>
-      <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-      Bootstrap
-    <% end %>
-  </div>
-  <div class="user">
-    <div class="user_links">
+<nav>
+  <div class="banner">
+    <!-- <a href="/home" class="logo"><img src="/images/TravelBlog_logo/logo_transparent.png" alt=""></a> -->
+    <div class="nav-elements">
       <% if user_signed_in? %>
-        <div class="user_profile_links">
+        <div class="navbar-links">
+          <%= link_to "Home", root_path  %>
           <%= link_to "Lists", student_lists_path %>
+        </div>
+        <div class="profile">
           <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
-          <%= image_tag("default_user.png", :class => "nav_bar_avatar") %>
+          <%= image_tag "default_user", class: "avatar" %>
         </div>
       <% else %>
-        <%= link_to "Login", new_user_session_path %>
+        <div class="navbar-links">
+          <%= link_to "Home", root_path  %>
+        </div>
+        <div class="profile">
+          <%= link_to "Login", new_user_session_path %>
+        </div>
       <% end %>
     </div>
   </div>
 </nav>
+<script src="/js/dropdown.js"></script>
