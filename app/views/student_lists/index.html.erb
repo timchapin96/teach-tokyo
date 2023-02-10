@@ -1,7 +1,7 @@
 <h1 class="student_lists_title">Your Student Lists</h1>
 <div class="cards_container">
   <% @student_lists.each do |list| %>
-    <div class="card" id="student_list_cards" data-id=<%= list.id %>>
+    <div class="card" data-controller="list" data-action="click->list#show" data-id=<%= list.id %>>
       <div class="card_content">
         <div class="card_banner"></div>
         <div class="card_text">
@@ -13,9 +13,6 @@
             <p>Number of students: <%= list.students.count %></p>
           </div>
         </div>
-      </div>
-      <div class="card_footer">
-        <%= link_to "View List", student_list_path(list), class: "btn btn-success" %>
       </div>
     </div>
   <% end %>
