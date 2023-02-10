@@ -15,15 +15,17 @@ class StudentListsController < ApplicationController
   end
 
   def index
-    @student_lists = StudentList.where(:user => current_user)
+    @student_lists = StudentList.where(user: current_user)
   end
 
   def show
     @student_list = StudentList.find(params[:id])
   end
+
   def edit
     @student_list = StudentList.find(params[:id])
   end
+
   def update
     @student_list = StudentList.find(params[:id])
     if @student_list.update(student_list_params)
@@ -40,6 +42,6 @@ class StudentListsController < ApplicationController
   end
 
   def student_list_params
-    params.require(:student_list).permit(:list_name)
+    params.require(:student_list).permit(:list_name, :description)
   end
 end

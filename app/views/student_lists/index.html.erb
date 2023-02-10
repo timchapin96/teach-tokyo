@@ -1,14 +1,17 @@
 <h1 class="student_lists_title">Your Student Lists</h1>
 <div class="cards_container">
   <% @student_lists.each do |list| %>
-    <div class="card">
+    <div class="card" id="student_list_cards" data-id=<%= list.id %>>
       <div class="card_content">
         <div class="card_banner"></div>
-        <div class="card_header">
-          <h3><strong><%= list.list_name %></strong></h3>
-        </div>
-        <div class="card_description">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="card_text">
+          <div class="card_header">
+            <h3><strong><%= list.list_name %></strong></h3>
+          </div>
+          <div class="card_description">
+            <p><%= list.description %></p>
+            <p>Number of students: <%= list.students.count %></p>
+          </div>
         </div>
       </div>
       <div class="card_footer">
