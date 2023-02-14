@@ -6,7 +6,7 @@ class StudentListsController < ApplicationController
   def create
     @student_list = StudentList.new(student_list_params)
     @student_list.user = current_user
-    @student_list.save
+    @student_list.banner = "https://images.unsplash.com/photo-1581078426770-6d336e5de7bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     if @student_list.save
       redirect_to student_lists_path
     else
@@ -42,6 +42,6 @@ class StudentListsController < ApplicationController
   end
 
   def student_list_params
-    params.require(:student_list).permit(:list_name, :description)
+    params.require(:student_list).permit(:list_name, :description, :banner)
   end
 end
