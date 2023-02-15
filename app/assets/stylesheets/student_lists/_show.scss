@@ -1,5 +1,21 @@
+.students {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0;
+}
+
 .student-card {
-  width: 4rem;
-  height: 4rem;
-  border: solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 12rem;
+  height: 9rem;
+  box-shadow: 2px 6px 10px rgb(174, 174, 174);
+}
+
+.student-card-body {
+  font-size: 24px;
 }
