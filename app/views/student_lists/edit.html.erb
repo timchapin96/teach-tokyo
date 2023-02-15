@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Edit List</h1>
+  <div class="edit_list">
+    <%= simple_form_for @student_list do |f| %>
+      <%= f.input :list_name %>
+      <%= f.input :description %>
+      <%= f.button :submit, "Update", class: "btn btn-info" %>
+    <% end %>
+    <%= link_to "Home", root_path, class: "btn btn-primary" %>
+  </div>
+
+</div>

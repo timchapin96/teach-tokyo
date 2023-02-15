@@ -1,0 +1,24 @@
+<div class="list-banner">
+  <%= image_tag @student_list.banner, class:"list-banner-img", id:"show_bg_2" %>
+  <div class="list-banner-content">
+    <h1><%= @student_list.list_name %></h1>
+    <div class="list-banner-buttons">
+      <%= link_to "Add Student", new_student_list_student_path(params[:id]), class: "btn btn-success" %>
+      <%= link_to "Back", student_lists_path, class: "btn btn-success" %>
+      <%= link_to "Delete",
+    student_list_path(params[:id]),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"
+
+  %>
+    </div>
+  </div>
+</div>
+<div class="students">
+<% @student_list.students.each do |student| %>
+    <div class="student-card">
+      <div class="student-card-body">
+      <p><%= student.name %></p>
+      </div>
+    </div>
+<% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_06_110511) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_10_062646) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_110511) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "student_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "list_name"
+    t.integer "user_id"
+    t.string "description"
+    t.integer "student_count"
+    t.string "banner"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "student_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -39,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_110511) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
