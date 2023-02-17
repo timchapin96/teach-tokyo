@@ -75,6 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "devise"
 end
-  gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
+gem "sidekiq"
+gem "sidekiq-failures", "~> 1.0"
