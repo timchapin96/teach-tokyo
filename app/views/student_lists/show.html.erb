@@ -2,23 +2,28 @@
   <%= image_tag @student_list.banner, class:"list-banner-img", id:"show_bg_2" %>
   <div class="list-banner-content">
     <h1><%= @student_list.list_name %></h1>
-    <div class="list-banner-buttons">
-      <%= link_to "Add Student", new_student_list_student_path(params[:id]), class: "btn btn-success" %>
-      <%= link_to "Back", student_lists_path, class: "btn btn-success" %>
-      <%= link_to "Delete",
-    student_list_path(params[:id]),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"
-
-  %>
-    </div>
   </div>
 </div>
-<div class="students">
-<% @student_list.students.each do |student| %>
-    <div class="student-card">
-      <div class="student-card-body">
-      <p><%= student.name %></p>
+</div>
+<%# Display list of students %>
+<div class="list-container" data-controller="studentlist">
+  <div class="students" data-studentlist-target="names">
+    <button class="random-button" data-action="click->studentlist#randomize">Randomize</button>
+    <% @student_list.students.each do |student| %>
+      <div class="student-card" data-action="click->studentlist#select">
+        <div class="student-card-body">
+          <p><%= student.name %></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="new-student-card">
+      <div class="new-student-card-body">
+        <%# <p>+</p> %>
+        <%= simple_form_for [@student_list, @student], class:"new-student-form", html: {data: {new_student_target: "form", action: "submit->new_student#new"}} do |f| %>
+          <%= f.input :name %>
+          <%= f.button :submit, "Submit", class: "btn btn-success" %>
+        <% end %>
       </div>
     </div>
-<% end %>
+  </div>
 </div>

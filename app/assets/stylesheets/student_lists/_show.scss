@@ -1,12 +1,71 @@
-.students {
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.students,
+groups {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   margin: 15px 0;
+  margin-bottom: 500px;
 }
 
+.random-button {
+  margin-top: 20px;
+  height: 50px;
+  width: 150px;
+  box-shadow: 2px 6px 10px rgb(174, 174, 174);
+  border-style: none;
+  transition: .2s;
+}
+
+.random-button:hover {
+  background-color: cadetblue;
+  color: whitesmoke;
+  transition: .2s;
+}
+
+// Student List Styling
 .student-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 12rem;
+  height: 9rem;
+  box-shadow: 2px 6px 10px rgb(174, 174, 174);
+  transition: .5s;
+}
+
+.student-card-clicked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 12rem;
+  height: 9rem;
+  box-shadow: 2px 6px 10px rgb(174, 174, 174);
+  background-color: cadetblue;
+  color: whitesmoke;
+  transition: .5s;
+}
+
+.student-card:hover {
+  box-shadow: 2px 6px 10px rgb(0, 0, 0);
+  // background-color: rgb(128, 209, 212);
+  // color: whitesmoke;
+  transition: .5s;
+}
+
+.student-card-body {
+  font-size: 24px;
+}
+
+.new-student-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +75,33 @@
   box-shadow: 2px 6px 10px rgb(174, 174, 174);
 }
 
-.student-card-body {
+.new-student-card-body {
   font-size: 24px;
+}
+
+.new-student-card-body form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// End of Student List Styling
+
+//Groups card styling
+.group-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  width: 12rem;
+  height: 9rem;
+  box-shadow: 2px 6px 10px #aeaeae;
+  transition: .5s;
+  flex-direction: column;
+}
+.group-card-body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

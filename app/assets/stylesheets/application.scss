@@ -1,8 +1,12 @@
 .notice {
   margin: 0;
 }
+html {
+  height: 100%;
+}
 body {
-  height: 100vh;
+  height: 100%;
+  display: relative;
 }
 
 
