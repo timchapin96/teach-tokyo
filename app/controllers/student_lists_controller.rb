@@ -20,6 +20,7 @@ class StudentListsController < ApplicationController
 
   def show
     @student_list = StudentList.find(params[:id])
+    @student = Student.new
   end
 
   def edit
