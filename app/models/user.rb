@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :messages
   has_many :student_lists
+  has_many :games, dependent: :destroy
 
   # Validate email format using a custom validator
   # validates :email, format: { with: /.+@education\.metro\.tokyo\.jp|.+@mail\.dnp\.co\.jp/,
