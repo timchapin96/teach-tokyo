@@ -1,0 +1,16 @@
+<div class="container" data-controller="map" data-map-game-value="<%= @game.to_json %>" >
+  <div class="color-select">
+    <div id="select">
+      <div id = "red" class="splatter"><%= show_svg("red.svg") %></div>
+      <div id = "blue" class="splatter"><%= show_svg("blue.svg") %></div>
+      <div id = "green" class="splatter"><%= show_svg("green.svg") %></div>
+      <div id = "purple" class="splatter"><%= show_svg("purple.svg") %></div>
+      <div id = "oragne" class="splatter"><%= show_svg("orange.svg") %></div>
+      <div id = "black" class="splatter"><%= show_svg("black.svg") %></div>
+    </div>
+  </div>
+  <div class="game-buttons">
+    <button class="save" data-action="click->map#save">Save</button>
+  </div>
+  <%= show_svg('jp-04.svg') %>
+</div>

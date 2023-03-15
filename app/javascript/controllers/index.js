@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import StudentListController from "./new_student_controller"
 application.register("studentlist", StudentListController)
+
+import Map from "./map_controller"
+application.register("map", Map)

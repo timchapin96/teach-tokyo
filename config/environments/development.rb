@@ -8,6 +8,11 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.assets.precompile += %w( '.svg' )
+
+  # Must include to get inline SVGs to work in deploy
+  config.assets.css_compressor = :sass
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -37,7 +42,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :test
   config.action_mailer.default_url_options = { host: "localhost:3000" }
   config.action_mailer.smtp_settings = {
     user_name:      ENV.fetch('SENDMAIL_USERNAME'),
