@@ -2,6 +2,7 @@ require "json"
 class GamesController < ApplicationController
   def index
     @games = Game.all
+    # @game = Game.find(params[:id])
   end
   def new
     @game = Game.new
@@ -19,7 +20,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-
+    p @game
   end
 
   def edit
@@ -38,14 +39,6 @@ class GamesController < ApplicationController
     else
       p "Game not Saved :("
     end
-    @game.boardState
-
-    # Do something with pref_data he
-    # parsed_data = JSON.parse(pref_data)
-    # parsed_data.each do |pref|
-    #   p pref
-    # end
-    # @game = Game.find(params[:id])
   end
 
   def game_params

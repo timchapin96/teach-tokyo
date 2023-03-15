@@ -1,6 +1,6 @@
 <h1>Games Page</h1>
 <div class="games-list">
   <% @games.each do |game| %>
-    <%= link_to game.title, game_path(game.id) %>
+    <p><%= link_to game.title, game_path(game.id) %></p>
   <% end %>
 </div>

@@ -2,10 +2,17 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["japan", "select"];
-
+  static values = {
+    game: Object
+  };
 
   connect() {
+    this.loadGame();
     this.colorFill();
+
+    // this.gameValue["boardState"].forEach((pref) => {
+    //   console.log(pref);
+    // });
   }
 
   colorFill() {
@@ -31,13 +38,25 @@ export default class extends Controller {
       })
     })
   }
+  loadGame() {
+    const prefectures = document.querySelectorAll(".st0")
+    let board = this.gameValue["boardState"];
+    prefectures.forEach((pref) => {
+      let prefColor = board[pref.id];
+      pref.style.fill = prefColor;
+      // console.log(board[pref.id]);
+    });
+    // prefectureKeys.forEach((key) => {
+    //   let prefColor = board[key];
+    // })
+
+  }
   save(event) {
     event.preventDefault();
     let prefData = []
     const prefectures = document.querySelectorAll(".st0")
     prefectures.forEach((pref) => {
       if (pref.style.fill === "") {
-        console.log(pref);
         pref.style.fill = "rgb(128, 128, 128)"
       }
       prefData.push({ prefecture: pref.id, style: pref.style.fill });
@@ -60,13 +79,6 @@ export default class extends Controller {
         console.log(data)
       })
 
-  }
-  load(event) {
-    const prefectures = document.querySelectorAll(".st0")
-
-    prefectures.forEach((pref) => {
-
-    });
   }
 
 
