@@ -1,0 +1,24 @@
+.game-buttons {
+  display: flex;
+}
+
+.game-buttons p {
+  color: white;
+  background-color: rgb(95, 157, 160);
+  width: 8rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px grey;
+  margin: 10px;
+  pointer-events: none;
+}
+
+.game-buttons p:hover {
+  background-color: black;
+}
+
+.game-buttons a {
+}
