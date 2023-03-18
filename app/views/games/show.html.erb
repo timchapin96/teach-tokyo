@@ -1,4 +1,4 @@
-<div class="container" data-controller="map" data-map-game-value="<%= @game.to_json %>" >
+<div class="map-container" data-controller="map" data-map-game-value="<%= @game.to_json %>" >
   <div class="color-select">
     <div id="select">
       <div id = "red" class="splatter"><%= show_svg("red.svg") %></div>
@@ -12,5 +12,5 @@
   <div class="game-buttons">
     <button class="save" data-action="click->map#save">Save</button>
   </div>
-  <%= show_svg('jp-04.svg') %>
+  <%= show_svg('JapanBoard.svg') %>
 </div>

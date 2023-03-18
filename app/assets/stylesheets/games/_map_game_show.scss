@@ -1,0 +1,38 @@
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.map-container svg {
+  width: 65%;
+  transition: 1s;
+  filter: drop-shadow(5px 5px 0px rgb(173, 216, 230));
+}
+.st0{
+  transition: 0.3s ease-in-out;
+}
+.st0:hover {
+  fill: white !important;
+}
+.label {
+  pointer-events: none;
+}
+
+.color-select {
+  display: none;
+  position: relative;
+}
+#select {
+  display: flex;
+  flex-wrap: wrap;
+}
+.st1 {
+  font-family: 'Roboto-Regular';
+}
+.st2 {
+  font-size: 14px;
+}
+.splatter {
+  width: 15vw;
+  z-index: 1;
+}

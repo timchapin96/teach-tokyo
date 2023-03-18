@@ -27,12 +27,19 @@ export default class extends Controller {
         selectedPref = document.getElementById(`${e.target.id}`)
       });
     });
+    //Change label color on hover
 
     // On Color click change background of ward to that colors id
     teamSelect.forEach((teamColor) => {
       teamColor.addEventListener("click", e => {
         let color = e.target.getAttribute("fill");
+        let r = this.hexToRgb(color)["r"] / 8;
+        let g = this.hexToRgb(color)["g"] / 8;
+        let b = this.hexToRgb(color)["b"] / 8;
+        let strokeRGB = `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+        console.log(strokeRGB);
         selectedPref.style.fill = color;
+        selectedPref.style.stroke = strokeRGB;
         // selectedPref.classList.toggle(e.target.id)
         select.style.display = "none";
       })
@@ -79,6 +86,14 @@ export default class extends Controller {
         console.log(data)
       })
 
+  }
+  hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
   }
 
 
