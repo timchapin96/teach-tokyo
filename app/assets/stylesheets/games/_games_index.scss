@@ -1,3 +1,9 @@
+.games-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(2, 131, 192);
+  z-index: -1;
+}
 .games-list a {
   color: black;
 }

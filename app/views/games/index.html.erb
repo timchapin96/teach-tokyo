@@ -1,8 +1,20 @@
-<div class="games-container">
-  <h1>Japan</h1>
-  <%= show_svg('JapanBoard.svg') %>
-  <div class="game-buttons">
-    <p><%= link_to "New Game", new_game_path %></p>
-    <p>Load</p>
+<div id="container">
+  <div class="map-background">
+    <svg>
+      <filter id="turbulence" x="0" y="0" width="100%" height="50%">
+        <feTurbulence id="waves" numOctaves="1" seed="1" baseFrequency="0.02 1"></feTurbulence>
+        <feDisplacementMap scale="500" in="SourceGraphic"> </feDisplacementMap>
+        <animate xlink:href = "#waves" attributeName="baseFrequency" dur="60s"
+          keyTime="0;0.5;1" values="0.02 0.06; 0.04 0.08; 0.02 0.06" repeatCount="indefinite"></animate>
+      </filter>
+    </svg>
+  </div>
+  <div class="games-container">
+    <h1>Japan</h1>
+    <%= show_svg('JapanBoard.svg') %>
+    <div class="game-buttons">
+      <p><%= link_to "New Game", new_game_path %></p>
+      <p>Load</p>
+    </div>
   </div>
 </div>
