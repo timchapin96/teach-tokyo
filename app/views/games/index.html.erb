@@ -12,13 +12,13 @@
   <div class="load-games">
     <ul class="games-list">
       <% @games.each do |game| %>
-        <li><%= game.title %></li>
+        <li><%= link_to game.title, game_path([game.id]) %></li>
       <% end %>
     </ul>
   </div>
   <div class="games-container">
     <h1>Japan</h1>
-    <%= show_svg('JapanBoard.svg') %>
+    <%= show_svg('JapanBoardIndex.svg') %>
     <div class="game-buttons">
       <p><%= link_to "New Game", new_game_path %></p>
       <button  data-action="click->load#load">Load</button>
