@@ -12,3 +12,6 @@ application.register("studentlist", StudentListController)
 
 import Map from "./map_controller"
 application.register("map", Map)
+
+import Load from "./load_controller"
+application.register("load", Load)
