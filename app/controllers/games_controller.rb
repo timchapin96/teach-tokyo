@@ -1,8 +1,7 @@
 require "json"
 class GamesController < ApplicationController
   def index
-    @games = Game.all
-    # @game = Game.find(params[:id])
+    @games = Game.where(user_id: current_user)
   end
   def new
     @game = Game.new
