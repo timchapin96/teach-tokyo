@@ -9,14 +9,17 @@
       </filter>
     </svg> %>
   </div>
-  <div class="load-games">
-    <ul class="games-list">
-      <% @games.each do |game| %>
-        <li><%= link_to game.title, game_path([game.id]) %></li>
-      <% end %>
-    </ul>
-  </div>
   <div class="games-container">
+    <div class="load-games">
+      <div class="games-list">
+        <% @games.each do |game| %>
+          <div class="loaded-game">
+            <%= link_to game.title, game_path([game.id], class: "loaded-games") %>
+            <p> Created on: <%= game.created_at.strftime("%d/%m/%Y") %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <h1>Japan</h1>
     <%= show_svg('JapanBoardIndex.svg') %>
     <div class="game-buttons">
