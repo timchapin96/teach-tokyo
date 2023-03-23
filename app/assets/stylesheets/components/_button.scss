@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.game-buttons p {
+.game-button {
   color: white;
   background-color: rgb(95, 157, 160);
   font-size: 1.8vw;
@@ -20,11 +20,14 @@
   border-radius: 5px;
   box-shadow: 2px 2px 5px grey;
   margin: 1rem;
-  pointer-events: none;
+  transition: 0.2s ease-in-out;
+  border:none;
+  text-decoration: none;
 }
 
-.game-buttons p:hover {
+.game-button:hover {
   background-color: black;
+  color: white;
 }
 
 .game-buttons a {
