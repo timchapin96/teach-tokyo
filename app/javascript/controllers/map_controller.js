@@ -33,14 +33,13 @@ export default class extends Controller {
     teamSelect.forEach((teamColor) => {
       teamColor.addEventListener("click", e => {
         let color = e.target.getAttribute("fill");
-        let r = this.hexToRgb(color)["r"] / 8;
-        let g = this.hexToRgb(color)["g"] / 8;
-        let b = this.hexToRgb(color)["b"] / 8;
+        let r = this.hexToRgb(color)["r"] / 1.5;
+        let g = this.hexToRgb(color)["g"] / 1.5;
+        let b = this.hexToRgb(color)["b"] / 1.5;
         let strokeRGB = `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
         console.log(strokeRGB);
         selectedPref.style.fill = color;
         selectedPref.style.stroke = strokeRGB;
-        // selectedPref.classList.toggle(e.target.id)
         select.style.display = "none";
       })
     })
@@ -48,6 +47,7 @@ export default class extends Controller {
   loadGame() {
     const prefectures = document.querySelectorAll(".st0")
     let board = this.gameValue["boardState"];
+    let outline = this.gameValue[""]
     prefectures.forEach((pref) => {
       let prefColor = board[pref.id];
       pref.style.fill = prefColor;
