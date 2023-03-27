@@ -1,0 +1,69 @@
+#cloud1 {
+  position: absolute;
+  top: 10svh;
+  left: 20svw;
+  background: rgb(255, 255, 255);
+  width: 104px;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  animation: move 160s infinite;
+}
+#cloud2 {
+  position: absolute;
+  top: 30svh;
+  left: 0svw;
+  background: rgb(255, 255, 255);
+  width: 104px;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  animation: move 140s infinite;
+}
+#cloud3 {
+  position: absolute;
+  top: 60svh;
+  left: 50svw;
+  background: rgb(255, 255, 255);
+  width: 104px;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  animation: move 140s infinite;
+}
+
+.cloud:after {
+  content: '';
+  background: #FFFFFF;
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  top: -25px;
+  left: 15px;
+}
+
+.cloud:before {
+  content: '';
+  background: rgb(255, 255, 255);
+  position: absolute;
+  width: 55px;
+  height: 56px;
+  border-radius: 50%;
+  top: -35px;
+  right: 10px;
+}
+
+@keyframes move {
+
+  0% {
+    transform: translatex(-10svw);
+    // visibility: hidden;
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translatex(100svw);
+    visibility: hidden;
+    animation-timing-function: cubic-bezier(0, 0, 0, 1);
+  }
+}

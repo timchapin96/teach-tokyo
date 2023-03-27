@@ -5,13 +5,13 @@
   background-color: rgb(2, 131, 192);
 }
 .japan-board {
-  height: 92vh;
+  height: 92svh;
   transition: 1s;
 }
-.st0{
+.japan-board .st0{
   transition: 0.3s ease-in-out;
 }
-.st0:hover {
+.japan-board .st0:hover {
   fill: white !important;
 }
 .label {
@@ -33,9 +33,10 @@
   font-size: 14px;
 }
 .splatter {
-  width: 15vw;
+  width: 15svw;
   z-index: 1;
 }
 .game-options {
   position: absolute;
+  bottom: 0;
 }
