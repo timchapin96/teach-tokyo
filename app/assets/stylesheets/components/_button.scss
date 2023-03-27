@@ -10,9 +10,8 @@
   color: white;
   background-color: rgb(95, 157, 160);
   font-size: 1.8vw;
-  width: 20%;
-  max-width: 20%;
-  height: 70%;
+  width: 15svw;
+  height: 8svh;
   flex-shrink: 1;
   display: flex;
   justify-content: center;
@@ -26,7 +25,7 @@
 }
 
 .game-button:hover {
-  background-color: black;
+  background-color: rgb(38, 65, 66);
   color: white;
 }
 
