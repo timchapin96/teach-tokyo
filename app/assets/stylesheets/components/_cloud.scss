@@ -1,35 +1,35 @@
 #cloud1 {
   position: absolute;
   top: 10svh;
-  left: 20svw;
+  left: -10svw;
   background: rgb(255, 255, 255);
   width: 104px;
   height: 30px;
   border-radius: 50px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-  animation: move 160s infinite;
+  animation: move 150s infinite;
 }
 #cloud2 {
   position: absolute;
   top: 30svh;
-  left: 0svw;
+  left: -10svw;
   background: rgb(255, 255, 255);
   width: 104px;
   height: 30px;
   border-radius: 50px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-  animation: move 140s infinite;
+  animation: move 100s infinite;
 }
 #cloud3 {
   position: absolute;
   top: 60svh;
-  left: 50svw;
+  left: -10svw;
   background: rgb(255, 255, 255);
   width: 104px;
   height: 30px;
   border-radius: 50px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-  animation: move 140s infinite;
+  animation: move 120s infinite;
 }
 
 .cloud:after {
@@ -62,7 +62,7 @@
     animation-timing-function: linear;
   }
   100% {
-    transform: translatex(100svw);
+    transform: translatex(120svw);
     visibility: hidden;
     animation-timing-function: cubic-bezier(0, 0, 0, 1);
   }

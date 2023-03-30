@@ -9,10 +9,7 @@ export default class extends Controller {
   connect() {
     this.loadGame();
     this.colorFill();
-
-    // this.gameValue["boardState"].forEach((pref) => {
-    //   console.log(pref);
-    // });
+    this.hover();
   }
 
   colorFill() {
@@ -47,15 +44,10 @@ export default class extends Controller {
   loadGame() {
     const prefectures = document.querySelectorAll(".st0")
     let board = this.gameValue["boardState"];
-    let outline = this.gameValue[""]
     prefectures.forEach((pref) => {
       let prefColor = board[pref.id];
       pref.style.fill = prefColor;
-      // console.log(board[pref.id]);
     });
-    // prefectureKeys.forEach((key) => {
-    //   let prefColor = board[key];
-    // })
 
   }
   save(event) {
@@ -94,6 +86,21 @@ export default class extends Controller {
       g: parseInt(result[2], 16),
       b: parseInt(result[3], 16)
     } : null;
+  }
+  hover() {
+    const prefectures = document.querySelectorAll(".st0")
+    prefectures.forEach((pref) => {
+      pref.addEventListener("mouseover", (event) => {
+        let prefName = event.target.id;
+        let foundPref = document.querySelector(`.${prefName}-title`);
+        foundPref.style.fill = "rgb(0,0,0)"
+      })
+      pref.addEventListener("mouseout", (event) => {
+        let prefName = event.target.id;
+        let foundPref = document.querySelector(`.${prefName}-title`);
+        foundPref.style.fill = "rgb(255,255,255)"
+      })
+    });
   }
 
 
