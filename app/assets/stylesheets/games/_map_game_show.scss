@@ -14,7 +14,8 @@
 .japan-board .st0:hover {
   fill: white !important;
 }
-.label {
+.japan-board text {
+  transition: 0.3s ease-in-out;
   pointer-events: none;
 }
 
