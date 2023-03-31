@@ -15,3 +15,9 @@ application.register("map", Map)
 
 import Load from "./load_controller"
 application.register("load", Load)
+
+import NewGame from "./new_game_controller"
+application.register("new_game", NewGame);
+
+import TeamSelect from "./teams_controller"
+application.register("team_select", TeamSelect)

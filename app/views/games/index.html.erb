@@ -1,4 +1,4 @@
-<div id="container" data-controller="load">
+<div id="container">
   <div class="map-background">
     <%# <svg>
       <filter id="turbulence" x="0" y="0" width="100%" height="50%">
@@ -9,7 +9,13 @@
       </filter>
     </svg> %>
   </div>
-  <div class="games-container">
+  <div class="games-container" data-controller = "new_game">
+    <div class="new-game d-none" data-new_game-target = "newGame">
+      <%= simple_form_for @game do |f| %>
+        <%= f.input :title %>
+        <%= f.button :submit, "Submit", class: "btn btn-success" %>
+      <% end %>
+    </div>
     <div class="load-games">
       <div class="games-list">
         <% @games.each do |game| %>
@@ -26,8 +32,8 @@
     <h1>Japan</h1>
     <%= show_svg('JapanBoardIndex.svg') %>
     <div class="game-buttons">
-      <%= link_to "New Game", new_game_path, class: "game-button" %>
-      <button class="game-button" data-action="click->load#load">Load</button>
+      <button class = "game-button" data-action = "click->new_game#displayForm"></button>
+      <button class="game-button" data-controller="load" data-action="click->load#load">Load</button>
     </div>
   </div>
 </div>

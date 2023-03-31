@@ -2,6 +2,7 @@ require "json"
 class GamesController < ApplicationController
   def index
     @games = Game.where(user_id: current_user)
+    @game = Game.new
   end
   def new
     @game = Game.new
@@ -11,7 +12,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user_id = current_user.id
     if @game.save
-      redirect_to games_path
+      redirect_to game_path(@game)
     else
       render :new, status: :unprocessable_entity
     end
