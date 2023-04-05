@@ -19,23 +19,26 @@
   pointer-events: none;
 }
 
-.color-select {
-  display: none;
-  position: absolute;
-}
-#select {
+//Team Select styling
+.team-select {
   display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  left: 10svw;
+  flex-direction: column;
+  align-items: center;
 }
+.colors {
+  display: flex;
+  width: 50svw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .st1 {
   font-family: 'Roboto-Regular';
 }
 .st2 {
   font-size: 14px;
-}
-.splatter {
-  width: 15svw;
-  z-index: 1;
 }
 .game-options {
   position: absolute;

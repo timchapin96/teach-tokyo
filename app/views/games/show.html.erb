@@ -1,12 +1,24 @@
 <div class="map-container" data-controller="map" data-map-game-value="<%= @game.to_json %>" >
+  <% if @game.newGame == true %>
+    <div class="team-select">
+      <h1>Select Teams</h1>
+      <div class="colors">
+        <div id = "red" class="splatter-select"><%= show_svg("red.svg") %></div>
+        <div id = "blue" class="splatter-select"><%= show_svg("blue.svg") %></div>
+        <div id = "green" class="splatter-select"><%= show_svg("green.svg") %></div>
+        <div id = "purple" class="splatter-select"><%= show_svg("purple.svg") %></div>
+        <div id = "oragne" class="splatter-select"><%= show_svg("orange.svg") %></div>
+        <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
+      </div>
+      <button class="game-button" data-controller="team_select" data-action = "click->team_select#teamSubmit">Submit</button>
+    </div>
+  <% end %>
   <div class="color-select">
     <div id="select">
-      <div id = "red" class="splatter"><%= show_svg("red.svg") %></div>
-      <div id = "blue" class="splatter"><%= show_svg("blue.svg") %></div>
-      <div id = "green" class="splatter"><%= show_svg("green.svg") %></div>
-      <div id = "purple" class="splatter"><%= show_svg("purple.svg") %></div>
-      <div id = "oragne" class="splatter"><%= show_svg("orange.svg") %></div>
-      <div id = "black" class="splatter"><%= show_svg("black.svg") %></div>
+
+      <% @game.selectedTeams.each do |team| %>
+        <div id = "<% team %>" class="splatter"><%= show_svg("#{team}.svg") %></div>
+      <% end %>
     </div>
   </div>
   <%= show_svg('JapanBoard.svg') %>
