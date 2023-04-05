@@ -33,27 +33,12 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-// .unsellected path {
-//   opacity: 0.7;
-// }
 
-.color-select {
-  display: none;
-  position: absolute;
-}
-#select {
-  display: flex;
-  flex-wrap: wrap;
-}
 .st1 {
   font-family: 'Roboto-Regular';
 }
 .st2 {
   font-size: 14px;
-}
-.splatter {
-  width: 15svw;
-  z-index: 1;
 }
 .game-options {
   position: absolute;
