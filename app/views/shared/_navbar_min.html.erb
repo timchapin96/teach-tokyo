@@ -1,4 +1,5 @@
-<div class="menu" data-controller = "menu">
+<% if user_signed_in? %>
+  <div class="menu" data-controller = "menu">
   <%= image_tag "menu-bars.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
   <div class="popup-menu">
     <p><%= link_to "Home", root_path %></p>
@@ -6,6 +7,7 @@
     <p id = "load-button" data-controller="load" data-action="click->load#load">Load</p>
   </div>
 </div>
+<% end %>
 <nav class= "navbar-min">
   <div class="nav-elements">
     <% if user_signed_in? %>
