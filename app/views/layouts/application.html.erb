@@ -9,9 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body>
-    <script src="path/to/sakura.min.js"></script>
-    <%= render "shared/navbar_min" %>
+  <body data-controller = "menu" data-action = "click->menu#menuClose">
+    <% if controller_name == "games" %>
+      <%= render "shared/navbar_min" %>
+    <% else %>
+      <%= render "shared/navbar" %>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

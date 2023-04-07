@@ -1,16 +1,22 @@
+<div class="menu" data-controller = "menu">
+  <%= image_tag "menu-bars.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
+  <div class="popup-menu">
+    <p><%= link_to "Home", root_path %></p>
+    <p data-controller = "new_game" data-action = "click->new_game#displayForm">New</p>
+    <p id = "load-button" data-controller="load" data-action="click->load#load">Load</p>
+  </div>
+</div>
 <nav class= "navbar-min">
-  <div class="banner">
-    <div class="nav-elements">
+  <div class="nav-elements">
     <% if user_signed_in? %>
-        <div class="profile">
-          <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
-          <%= image_tag "default_user.png", class: "avatar" %>
-        </div>
-      <% else %>
-        <div class="profile">
-          <%= link_to "Login", new_user_session_path %>
-        </div>
-      <% end %>
-    </div>
+      <div class="profile">
+        <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+        <%= image_tag "default_user.png", class: "avatar" %>
+      </div>
+    <% else %>
+      <div class="profile">
+        <%= link_to "Login", new_user_session_path %>
+      </div>
+    <% end %>
   </div>
 </nav>
