@@ -15,7 +15,7 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to game_path(@game)
     else
-      render :new, status: :unprocessable_entity
+      render plain: @game.errors.full_messages.join(", "), status: :unprocessable_entity
     end
   end
 
