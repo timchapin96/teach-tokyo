@@ -20,6 +20,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @games = Game.where(user_id: current_user)
     @game = Game.find(params[:id])
   end
 
@@ -36,9 +37,10 @@ class GamesController < ApplicationController
         @game.boardState[prefecture] = color
       end
       if @game.save
-        p "Game Saved!"
+        flash[:notice] = "Game Saved"
+        p "Saved"
       else
-        p "Game not Saved :("
+        flash.now[:notice] = "Game failed to save :("
       end
     else
       @team_select = params[:teamSelect]
