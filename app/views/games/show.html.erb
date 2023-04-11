@@ -1,4 +1,8 @@
 <div class="map-container" data-controller="map" data-map-game-value="<%= @game.to_json %>" >
+  <div class="partials" data-controller = "new_game">
+    <%= render "/partials/new_game" %>
+    <%= render "/partials/load" %>
+  </div>
   <% if @game.newGame == true %>
     <div class="team-select">
       <h1>Select Teams</h1>
@@ -11,7 +15,7 @@
         <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
       </div>
       <button class="game-button" data-controller="team_select" data-action = "click->team_select#teamSubmit">Submit</button>
-    <div class="background-blur"></div>
+      <div class="background-blur"></div>
     </div>
   <% end %>
   <div class="color-select">

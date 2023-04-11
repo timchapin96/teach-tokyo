@@ -10,22 +10,8 @@
     </svg> %>
   </div>
   <div class="games-container" data-controller = "new_game">
-    <div class="new-game d-none" data-new_game-target = "newGame">
-      <%= simple_form_for @game do |f| %>
-        <%= f.input :title %>
-        <%= f.button :submit, "Submit", class: "btn btn-success" %>
-      <% end %>
-    </div>
-    <div class="load-games">
-      <div class="games-list">
-        <% @games.each do |game| %>
-          <div class="loaded-game">
-            <%= link_to game.title, game_path([game.id], class: "loaded-games") %>
-            <p> Created on: <%= game.created_at.strftime("%d/%m/%Y") %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= render "/partials/new_game" %>
+    <%= render "/partials/load" %>
     <div id = "cloud1" class="cloud"></div>
     <div id = "cloud2" class="cloud"></div>
     <div id = "cloud3" class="cloud"></div>
