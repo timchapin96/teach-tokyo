@@ -11,6 +11,7 @@
         <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
       </div>
       <button class="game-button" data-controller="team_select" data-action = "click->team_select#teamSubmit">Submit</button>
+    <div class="background-blur"></div>
     </div>
   <% end %>
   <div class="color-select">
@@ -21,7 +22,9 @@
     </div>
   </div>
   <%= show_svg('JapanBoard.svg') %>
-  <div class="game-options">
-    <button class="save game-button" data-action="click->map#save">Save</button>
-  </div>
+  <% if @game.newGame == false %>
+    <div class="game-options">
+      <button class="save game-button" data-action="click->map#save">Save</button>
+    </div>
+  <% end %>
 </div>

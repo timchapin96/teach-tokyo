@@ -20,7 +20,7 @@ export default class extends Controller {
   //Submit teams and start game
   teamSubmit() {
     let teamSelectDiv = document.querySelector(".team-select")
-    let teamColors = document.querySelectorAll(".team-color")
+    let teamColors = document.querySelectorAll(".team-color");
     teamColors.forEach((color) => {
       color.classList.remove("select-opacity");
     })
@@ -38,7 +38,7 @@ export default class extends Controller {
     })
       .then((response) => {
         console.log("Team select submitted successfully");
-        // window.location.reload();
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error submitting team select:", error);

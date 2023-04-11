@@ -22,10 +22,13 @@
 //Team Select styling
 .team-select {
   display: flex;
-  position: absolute;
-  left: 10svw;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .colors {
   display: flex;
