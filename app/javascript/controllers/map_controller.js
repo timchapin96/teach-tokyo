@@ -34,15 +34,18 @@ export default class extends Controller {
         let g = this.hexToRgb(color)["g"] / 1.5;
         let b = this.hexToRgb(color)["b"] / 1.5;
         let strokeRGB = `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
-        console.log(strokeRGB);
         selectedPref.style.fill = color;
         selectedPref.style.stroke = strokeRGB;
+        const docks = document.querySelectorAll(`.${selectedPref.id}-dock`);
+        docks.forEach((dock) => {
+          dock.style.fill = color;
+        })
         select.style.display = "none";
       })
     })
   }
   loadGame() {
-    const prefectures = document.querySelectorAll(".st0")
+    const prefectures = document.querySelectorAll(".st0");
     let board = this.gameValue["boardState"];
     prefectures.forEach((pref) => {
       let prefColor = board[pref.id];
