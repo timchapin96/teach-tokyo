@@ -22,6 +22,8 @@ class GamesController < ApplicationController
   def show
     @games = Game.where(user_id: current_user)
     @game = Game.find(params[:id])
+    @game_teams = @game.selectedTeams
+    @team_score = @game.teamScores
   end
 
   def edit
@@ -29,19 +31,22 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params["id"])
+    # Update game on save button click
     if params["_json"]
       prefecture_data = params["_json"]
       prefecture_data.each do |pref|
+        team = pref["color"]
         prefecture = pref["prefecture"]
         color = pref["style"]
-        @game.boardState[prefecture] = color
+        @game.boardState[prefecture] = [color, team]
       end
       if @game.save
-        flash[:notice] = "Game Saved"
+        flash.now[:notice] = "Game Saved"
         p "Saved"
       else
         flash.now[:notice] = "Game failed to save :("
       end
+    # Update team select on instance of new game
     else
       @team_select = params[:teamSelect]
       @game.selectedTeams = @team_select
@@ -55,7 +60,7 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:title, :user_id, :boardState, :teamSelect, :newGame)
+    params.require(:game).permit(:title, :user_id, :boardState, :teamSelect, :newGame, :teamScores)
   end
 
   def game_params_save

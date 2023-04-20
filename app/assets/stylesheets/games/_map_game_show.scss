@@ -4,19 +4,45 @@
   align-items: center;
   background-color: rgb(2, 131, 192);
 }
+
 .japan-board {
   height: 100svh;
   transition: 1s;
 }
-.japan-board .st0{
+
+.japan-board .st0 {
   transition: 0.3s ease-in-out;
 }
+
 .japan-board .st0:hover {
   fill: white !important;
 }
+
 .japan-board text {
   transition: 0.3s ease-in-out;
   pointer-events: none;
+}
+
+// .circle1 {
+//   animation-delay: 1s;
+// }
+// .circle2 {
+//   animation-delay: 2s;
+// }
+// .circle3 {
+//   animation-delay: 3s;
+// }
+
+@keyframes growAndFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
 }
 
 //Team Select styling
@@ -30,6 +56,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .colors {
   display: flex;
   width: 50svw;
@@ -40,9 +67,11 @@
 .st1 {
   font-family: 'Roboto-Regular';
 }
+
 .st2 {
   font-size: 14px;
 }
+
 .game-options {
   position: absolute;
   bottom: 0;
