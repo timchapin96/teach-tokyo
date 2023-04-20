@@ -8,7 +8,6 @@ export default class extends Controller {
   connect() {
     this.loadGame();
     this.colorFill();
-    this.save();
     this.updateScore();
     this.hover();
   }
@@ -21,7 +20,7 @@ export default class extends Controller {
     //Loop over each prefecture SVG
     prefectures.forEach((pref) => {
       //If that prefecture has a value in the pair of [rgb, colorName] it means its controlled by a team
-      if (board[pref.id][0]) {
+      if (board[pref.id]) {
         let prefColor = board[pref.id][0];
         let prefTeam = board[pref.id][1];
         //Fill that prefecture color with saved value from boardState
