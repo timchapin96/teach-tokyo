@@ -51,10 +51,12 @@ export default class extends Controller {
     const prefectures = document.querySelectorAll(".st0");
     let board = this.gameValue["boardState"];
     prefectures.forEach((pref) => {
-      let prefColor = board[pref.id][0];
-      let prefTeam = board[pref.id][1];
-      pref.style.fill = prefColor;
-      pref.setAttribute("team", prefTeam);
+      if (board[pref.id][0]) {
+        let prefColor = board[pref.id][0];
+        let prefTeam = board[pref.id][1];
+        pref.style.fill = prefColor;
+        pref.setAttribute("team", prefTeam);
+      }
     });
 
   }
