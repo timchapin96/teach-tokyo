@@ -48,10 +48,10 @@ export default class extends Controller {
     })
   }
   loadGame() {
-    const prefectures = document.querySelectorAll(".st0");
-    console.log(prefectures);
+    const array = document.querySelectorAll(".st0");
+    console.log(array);
     let board = this.gameValue["boardState"];
-    prefectures.forEach((pref) => {
+    array.forEach((pref) => {
       if (board[pref.id][0]) {
         let prefColor = board[pref.id][0];
         let prefTeam = board[pref.id][1];
