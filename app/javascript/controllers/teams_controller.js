@@ -38,7 +38,6 @@ export default class extends Controller {
     })
       .then((response) => {
         console.log("Team select submitted successfully");
-        window.location.reload();
       })
       .catch((error) => {
         console.error("Error submitting team select:", error);

@@ -21,3 +21,6 @@ application.register("team_select", TeamSelect)
 
 import Menu from "./menu_controller"
 application.register("menu", Menu)
+
+import Score from "./score_controller"
+application.register("score", Score)

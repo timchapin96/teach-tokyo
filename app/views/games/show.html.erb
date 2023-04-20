@@ -18,17 +18,12 @@
       <div class="background-blur"></div>
     </div>
   <% end %>
-  <div class="color-select">
-    <div id="select">
-      <% @game.selectedTeams.each do |team| %>
-        <div id = "<% team %>" class="splatter"><%= show_svg("#{team}.svg") %></div>
-      <% end %>
-    </div>
-  </div>
+  <%= render '/partials/team_select' %>
   <%= show_svg('JapanBoard.svg') %>
   <% if @game.newGame == false %>
     <div class="game-options">
       <button class="save game-button" data-action="click->map#save">Save</button>
     </div>
   <% end %>
+  <%= render '/partials/score_keeper' %>
 </div>

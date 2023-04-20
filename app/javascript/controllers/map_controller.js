@@ -1,5 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
-
+import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["japan", "select"];
   static values = {
@@ -9,6 +8,7 @@ export default class extends Controller {
   connect() {
     this.loadGame();
     this.colorFill();
+    this.updateScore();
     this.hover();
   }
 
@@ -29,6 +29,7 @@ export default class extends Controller {
     // On Color click change background of ward to that colors id
     teamSelect.forEach((teamColor) => {
       teamColor.addEventListener("click", e => {
+        const team = e.target.getAttribute("team");
         let color = e.target.getAttribute("fill");
         let r = this.hexToRgb(color)["r"] / 1.5;
         let g = this.hexToRgb(color)["g"] / 1.5;
@@ -36,6 +37,8 @@ export default class extends Controller {
         let strokeRGB = `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
         selectedPref.style.fill = color;
         selectedPref.style.stroke = strokeRGB;
+        selectedPref.setAttribute("team", team);
+        this.updateScore();
         const docks = document.querySelectorAll(`.${selectedPref.id}-dock`);
         docks.forEach((dock) => {
           dock.style.fill = color;
@@ -48,8 +51,10 @@ export default class extends Controller {
     const prefectures = document.querySelectorAll(".st0");
     let board = this.gameValue["boardState"];
     prefectures.forEach((pref) => {
-      let prefColor = board[pref.id];
+      let prefColor = board[pref.id][0];
+      let prefTeam = board[pref.id][1];
       pref.style.fill = prefColor;
+      pref.setAttribute("team", prefTeam);
     });
 
   }
@@ -61,11 +66,10 @@ export default class extends Controller {
       if (pref.style.fill === "") {
         pref.style.fill = "rgb(128, 128, 128)"
       }
-      prefData.push({ prefecture: pref.id, style: pref.style.fill });
+      prefData.push({ prefecture: pref.id, style: pref.style.fill, color: pref.getAttribute("team") });
     });
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
     fetch(`${window.location.pathname}`, {
       method: "PATCH",
       headers: {
@@ -103,6 +107,33 @@ export default class extends Controller {
         let foundPref = document.querySelector(`.${prefName}-title`);
         foundPref.style.fill = "rgb(255,255,255)"
       })
+    });
+  }
+
+  //Score functions
+  tallyScore() {
+    const prefectures = document.querySelectorAll(".st0")
+    //Define scores Object
+    let teamScores = { red: 0, blue: 0, green: 0, purple: 0, orange: 0, black: 0 };
+    //Loop through the prefectures and tally the scores
+    prefectures.forEach((pref) => {
+      console.log(pref.getAttribute("team"));
+      let prefTeam = pref.getAttribute("team");
+      teamScores[`${prefTeam}`] = parseInt(teamScores[`${prefTeam}`]) + 1
+    })
+    //Return team scores for save event
+    return teamScores;
+  }
+  //Update score function
+  updateScore() {
+    let teamScores = this.tallyScore();
+    //Get team colors
+    const currentTeams = document.querySelectorAll(".score");
+    //Loop through all the active teams and set their score counter
+    currentTeams.forEach((team) => {
+      let teamColor = team.getAttribute("team-color");
+      let teamScore = document.querySelector(`.${teamColor}-score`);
+      teamScore.innerHTML = teamScores[`${teamColor}`].toString();
     });
   }
 
