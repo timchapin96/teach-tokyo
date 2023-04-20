@@ -49,6 +49,7 @@ export default class extends Controller {
   }
   loadGame() {
     const prefectures = document.querySelectorAll(".st0");
+    console.log(prefectures);
     let board = this.gameValue["boardState"];
     prefectures.forEach((pref) => {
       if (board[pref.id][0]) {
