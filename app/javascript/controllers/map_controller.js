@@ -8,23 +8,47 @@ export default class extends Controller {
   connect() {
     this.loadGame();
     this.colorFill();
+    this.save();
     this.updateScore();
     this.hover();
+  }
+
+  loadGame() {
+    //Selects all prefecture SVGS from the map
+    const prefectures = document.querySelectorAll(".st0");
+    //boardState a variable from the database that contains which territories are owned by which teams
+    let board = this.gameValue["boardState"];
+    //Loop over each prefecture SVG
+    prefectures.forEach((pref) => {
+      //If that prefecture has a value in the pair of [rgb, colorName] it means its controlled by a team
+      if (board[pref.id][0]) {
+        let prefColor = board[pref.id][0];
+        let prefTeam = board[pref.id][1];
+        //Fill that prefecture color with saved value from boardState
+        pref.style.fill = prefColor;
+        //Fill that wards dock color
+        console.log(pref.id);
+        console.log(prefColor);
+        this.dockFill(pref.id, prefColor);
+        //Set the attribute of team to the color name for later use
+        pref.setAttribute("team", prefTeam);
+      }
+    });
   }
 
   colorFill() {
     const select = document.querySelector(".color-select")
     const teamSelect = document.querySelectorAll("#select div")
     const prefectures = document.querySelectorAll(".st0")
-    let selectedPref = "";
+
     // Get ward selected
+    let selectedPref = "";
     prefectures.forEach((prefecture) => {
       prefecture.addEventListener("click", e => {
         select.style.display = "block";
         selectedPref = document.getElementById(`${e.target.id}`)
-      });
+      })
     });
-    //Change label color on hover
 
     // On Color click change background of ward to that colors id
     teamSelect.forEach((teamColor) => {
@@ -39,30 +63,23 @@ export default class extends Controller {
         selectedPref.style.stroke = strokeRGB;
         selectedPref.setAttribute("team", team);
         this.updateScore();
-        const docks = document.querySelectorAll(`.${selectedPref.id}-dock`);
-        docks.forEach((dock) => {
-          dock.style.fill = color;
-        })
+        this.dockFill(selectedPref.id, color);
         select.style.display = "none";
       })
     })
   }
-  loadGame() {
-    const array = document.querySelectorAll(".st0");
-    console.log(array);
-    let board = this.gameValue["boardState"];
-    array.forEach((pref) => {
-      if (board[pref.id][0]) {
-        let prefColor = board[pref.id][0];
-        let prefTeam = board[pref.id][1];
-        pref.style.fill = prefColor;
-        pref.setAttribute("team", prefTeam);
-      }
-    });
 
+  dockFill(prefecture, color) {
+    const docks = document.querySelectorAll(`.${prefecture}-dock`);
+    docks.forEach((dock) => {
+      dock.style.fill = color;
+    })
   }
+
   save(event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     let prefData = []
     const prefectures = document.querySelectorAll(".st0")
     prefectures.forEach((pref) => {
@@ -85,10 +102,10 @@ export default class extends Controller {
     })
       .then(response => response)
       .then((data) => {
-        console.log(data)
       })
 
   }
+
   hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
@@ -97,6 +114,7 @@ export default class extends Controller {
       b: parseInt(result[3], 16)
     } : null;
   }
+
   hover() {
     const prefectures = document.querySelectorAll(".st0")
     prefectures.forEach((pref) => {
@@ -120,7 +138,6 @@ export default class extends Controller {
     let teamScores = { red: 0, blue: 0, green: 0, purple: 0, orange: 0, black: 0 };
     //Loop through the prefectures and tally the scores
     prefectures.forEach((pref) => {
-      console.log(pref.getAttribute("team"));
       let prefTeam = pref.getAttribute("team");
       teamScores[`${prefTeam}`] = parseInt(teamScores[`${prefTeam}`]) + 1
     })
@@ -139,6 +156,4 @@ export default class extends Controller {
       teamScore.innerHTML = teamScores[`${teamColor}`].toString();
     });
   }
-
-
 }
