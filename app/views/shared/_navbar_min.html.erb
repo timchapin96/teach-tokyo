@@ -3,8 +3,8 @@
   <%= image_tag "menu-bars.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
   <div class="popup-menu">
     <p><%= link_to "Home", root_path %></p>
-    <p data-controller = "new_game" data-action = "click->new_game#displayForm">New</p>
-    <p id = "load-button" data-controller="load" data-action="click->load#load">Load</p>
+    <p data-controller = "new_game menu" data-action = "click->new_game#displayForm click->menu#menuPopup">New</p>
+    <p id = "load-button" data-controller="load menu" data-action="click->load#load click->menu#menuPopup">Load</p>
   </div>
 </div>
 <% end %>
