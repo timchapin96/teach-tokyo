@@ -14,7 +14,7 @@
         <div id = "oragne" class="splatter-select"><%= show_svg("orange.svg") %></div>
         <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
       </div>
-      <button class="game-button" data-controller="team_select" data-action = "click->team_select#teamSubmit">Submit</button>
+      <button class="game-button" data-controller="team_select map" data-action = "click->team_select#teamSubmit click->map#firstLoad">Submit</button>
       <div class="background-blur"></div>
     </div>
   <% end %>
@@ -24,6 +24,6 @@
     <div class="game-options">
       <button class="save game-button" data-action="click->map#save">Save</button>
     </div>
-  <% end %>
   <%= render '/partials/score_keeper' %>
+  <% end %>
 </div>

@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import { teamSubmit } from './teams_controller'
 export default class extends Controller {
   static targets = ["japan", "select"];
   static values = {
@@ -8,6 +9,10 @@ export default class extends Controller {
   connect() {
     this.loadGame();
     this.colorFill();
+    this.hover();
+  }
+
+  firstLoad() {
     this.updateScore();
     this.hover();
   }
@@ -20,14 +25,12 @@ export default class extends Controller {
     //Loop over each prefecture SVG
     prefectures.forEach((pref) => {
       //If that prefecture has a value in the pair of [rgb, colorName] it means its controlled by a team
-      if (board[pref.id]) {
+      if (board?.[pref.id]?.[1]) {
         let prefColor = board[pref.id][0];
         let prefTeam = board[pref.id][1];
         //Fill that prefecture color with saved value from boardState
         pref.style.fill = prefColor;
         //Fill that wards dock color
-        console.log(pref.id);
-        console.log(prefColor);
         this.dockFill(pref.id, prefColor);
         //Set the attribute of team to the color name for later use
         pref.setAttribute("team", prefTeam);
@@ -152,7 +155,7 @@ export default class extends Controller {
     currentTeams.forEach((team) => {
       let teamColor = team.getAttribute("team-color");
       let teamScore = document.querySelector(`.${teamColor}-score`);
-      teamScore.innerHTML = teamScores[`${teamColor}`].toString();
+      teamScore.innerHTML = `<h3>${teamScores[`${teamColor}`].toString()}</h3>`;
     });
   }
 }
