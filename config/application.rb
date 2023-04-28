@@ -16,6 +16,7 @@ module PairMaker
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.active_job.queue_adapter = :sidekiq
+    config.encoding = "utf-8"
 
     # Configuration for the application, engines, and railties goes here.
     #
