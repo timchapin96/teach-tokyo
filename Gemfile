@@ -79,3 +79,4 @@ end
 gem 'rails_12factor', group: :production
 gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
+# gem "byebug"

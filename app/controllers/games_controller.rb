@@ -41,10 +41,13 @@ class GamesController < ApplicationController
         @game.boardState[prefecture] = [color, team]
       end
       if @game.save
-        flash.now[:notice] = "Game Saved"
-        p "Saved"
+        p "First hi"
+        render "Game Saved"
+        # raise
+        # flash.now[:notice] = "Game Saved successfully"
+        # redirect_to root_path, notice: "Game Saved"
       else
-        flash.now[:notice] = "Game failed to save :("
+        flash[:notice] = "Game failed to save :("
       end
     # Update team select on instance of new game
     else

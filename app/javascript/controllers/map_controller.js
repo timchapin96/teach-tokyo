@@ -102,8 +102,9 @@ export default class extends Controller {
       body: JSON.stringify(prefData)
 
     })
-      .then(response => response)
+      .then(response => console.log("second Hi"))
       .then((data) => {
+
       })
 
   }
