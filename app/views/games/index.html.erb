@@ -19,7 +19,7 @@
     <%= show_svg('JapanBoardIndex.svg') %>
     <% if user_signed_in? %>
       <div class="game-buttons">
-        <button class = "game-button" data-action = "click->new_game#displayForm">New</button>
+        <button id = "new-button" class = "game-button" data-action = "click->new_game#displayForm">New</button>
         <button id = "load-button" class="game-button" data-controller="load" data-action="click->load#load">Load</button>
       </div>
     <% end %>
