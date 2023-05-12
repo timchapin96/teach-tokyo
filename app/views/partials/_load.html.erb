@@ -1,10 +1,12 @@
 <div class="load-games">
   <div class="games-list">
     <% @games.each do |game| %>
-      <div class="loaded-game">
-        <%= link_to game.title, game_path([game.id], class: "loaded-games") %>
-        <p> Created on: <%= game.created_at.strftime("%d/%m/%Y") %></p>
-      </div>
+      <%= link_to game_path(game.id.to_i) do %>
+        <div class="loaded-game">
+          <%= game.title %>
+          <p> Created on: <%= game.created_at.strftime("%d/%m/%Y") %></p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

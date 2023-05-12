@@ -3,6 +3,5 @@ export default class extends Controller {
   static targets = ["newGame"]
   displayForm() {
     this.newGameTarget.classList.remove("d-none")
-    console.log(this.newGameTarget);
   }
 }

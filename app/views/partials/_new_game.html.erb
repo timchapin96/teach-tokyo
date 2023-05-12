@@ -1,6 +1,6 @@
 <div id="new-game" class="new-game d-none" data-new_game-target = "newGame">
-  <%= simple_form_for @game do |f| %>
-    <%= f.input :title %>
+  <%= simple_form_for @game, class: "new-game" do |f| %>
+    <%= f.input :title, class: "new-game" %>
     <%= f.button :submit, "Submit", class: "btn btn-success" %>
   <% end %>
 </div>
