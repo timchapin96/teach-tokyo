@@ -22,7 +22,6 @@ export default class extends Controller {
     const prefectures = document.querySelectorAll(".st0");
     //boardState a variable from the database that contains which territories are owned by which teams
     let board = this.gameValue["boardState"];
-    console.log(board);
     //Loop over each prefecture SVG
     prefectures.forEach((pref) => {
       //If that prefecture has a value in the pair of [rgb, colorName] it means its controlled by a team
@@ -157,7 +156,6 @@ export default class extends Controller {
     //Loop through all the active teams and set their score counter
     currentTeams.forEach((team) => {
       let teamColor = team.getAttribute("team-color");
-      console.log(teamColor);
       let teamScore = document.querySelector(`.${teamColor}-score`);
       teamScore.innerHTML = `<h3>${teamScores[`${teamColor}`].toString()}</h3>`;
     });
