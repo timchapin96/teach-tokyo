@@ -22,7 +22,6 @@ export default class extends Controller {
     }
   }
   randomize() {
-    console.log(this.namesTarget);
     let studentArrayCopy = [...studentArray]
     for (let i = 0; i < studentArray.length; i++) {
       let randStudent = sample(studentArrayCopy);

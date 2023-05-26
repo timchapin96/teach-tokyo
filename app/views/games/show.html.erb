@@ -2,6 +2,7 @@
   <div class="partials" data-controller = "new_game">
     <%= render "/partials/new_game" %>
     <%= render "/partials/load" %>
+    <%= render "/partials/error" %>
   </div>
   <% if @game.newGame == true %>
     <div class="team-select">
@@ -14,7 +15,7 @@
         <div id = "oragne" class="splatter-select"><%= show_svg("orange.svg") %></div>
         <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
       </div>
-      <button class="game-button" data-controller="team_select map" data-action = "click->team_select#teamSubmit click->map#firstLoad">Submit</button>
+      <button class="game-button" data-controller="teams map" data-action = "click->teams#teamSubmit click->map#firstLoad">Submit</button>
       <div class="background-blur"></div>
     </div>
   <% end %>
