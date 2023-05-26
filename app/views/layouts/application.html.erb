@@ -10,6 +10,10 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body data-controller = "menu" data-action = "click->menu#menuClose">
+  <div id="vertical-container">
+      <h1>Vertical mode is not supported for this app.</h1>
+      <p>Plese flip screen to horizontal mode</p>
+    </div>
     <% if controller_name == "games" %>
       <%= render "shared/navbar_min" %>
     <% else %>

@@ -32,15 +32,27 @@ body {
 #container {
   display: block;
 }
+#vertical-container {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 @media only screen and (orientation:portrait) {
-  #container {
-    height: 100vw;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+  #container, .navbar-min, .menu, .map-container {
+    // height: 100vw;
+    // -webkit-transform: rotate(90deg);
+    // -moz-transform: rotate(90deg);
+    // -o-transform: rotate(90deg);
+    // -ms-transform: rotate(90deg);
+    // transform: rotate(90deg);
+    visibility:hidden;
+  }
+  #vertical-container {
+    display: block;
   }
 }
 

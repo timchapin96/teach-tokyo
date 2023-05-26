@@ -2,7 +2,7 @@
 .color-select {
   display: none;
   position: absolute;
-  width: 40svw;
+  width: 50svw;
   left: 10svw;
 }
 #select {
@@ -10,10 +10,11 @@
   flex-wrap: wrap;
 }
 .splatter-select {
-  width: 15svw;
+  width: 10svw;
   z-index: 1;
 }
 .splatter {
+  max-width: 300px;
   width: 15svw;
   z-index: 1;
 }
