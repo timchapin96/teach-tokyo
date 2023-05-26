@@ -1,10 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 const teamSelect = [];
 const location = window.location.pathname
+const errorMessage = document.querySelector(".error-message")
 
 export default class extends Controller {
   //set targets
-  static target = ["errorMessage"]
+  // static target = ["errorMessage"] //Error message not found. Ask about later
+
   // Select team colors and add to array
   select(e) {
     console.log(this.errorMessageTarget);
@@ -47,9 +49,10 @@ export default class extends Controller {
       })
       // Make selection invisible to user
       teamSelectDiv.style.display = "none";
+      errorMessage.style.visibility = "hidden"
     }
     else {
-
+      errorMessage.style.visibility = "visible"
     }
   }
 }
