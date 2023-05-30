@@ -1,9 +1,20 @@
 .new-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   background-color: black;
   color: white;
   padding: 15px;
   border-radius: 5px;
+  width: 30%;
+  height: 40%;
+}
+.form-label {
+  font-size: 90%;
+}
+.form-control {
+  font-size: 80%;
 }
 
 #new_game {
