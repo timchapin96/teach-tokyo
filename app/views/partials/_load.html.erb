@@ -3,8 +3,8 @@
     <% @games.each do |game| %>
       <%= link_to game_path(game.id.to_i) do %>
         <div class="loaded-game">
-          <%= game.title %>
-          <p> Created on: <%= game.created_at.strftime("%d/%m/%Y") %></p>
+          <p id="game-title"><%= game.title %></p>
+          <p id="game-date"> Created on: <%= game.created_at.strftime("%d/%m/%Y") %><p>
         </div>
       <% end %>
     <% end %>

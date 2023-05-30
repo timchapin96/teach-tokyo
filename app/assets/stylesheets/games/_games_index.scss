@@ -16,8 +16,8 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 20svw;
-  height: 20svh;
+  width: 30svw;
+  width: 30vw;
   text-decoration: none;
   height: auto;
   background-color: rgb(0, 0, 0);
@@ -26,7 +26,9 @@
 }
 .games-list {
   z-index: 1;
-  height: 50svh;
+  height: 70svh;
+  height: 70vh;
+  width: 100%;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -34,9 +36,15 @@
 .loaded-game{
   z-index: 1;
   background-color: white;
-  margin: 10px;
-  padding: 5px;
+  margin: 5%;
+  padding: 2.5%;
   text-align: center;
+  #game-title{
+    font-size: 2.3vw;
+  }
+  #game-date{
+    font-size: 2vw;
+  }
 }
 .load-games a {
   color: black;
