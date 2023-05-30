@@ -10,45 +10,64 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 10px;
+  padding: 1vw;
 
-  .profile a{
-    transition: 0.2s ease-in-out;
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    text-shadow: 0px 2px 3px #b2b2b2;
-  }
-  .profile a:hover {
-    transition: 0.2s ease-in-out;
-    color: whitesmoke;
-    animation: pulse 2s infinite;
-  }
-  .profile img {
-    width: 3rem;
-    background-color: white;
-    box-shadow: 1px 2px 5px 0px #6a6969;
+  .profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 15svw;
+
+    a {
+      transition: 0.2s ease-in-out;
+      text-decoration: none;
+      color: white;
+      font-size: 2vw;
+      text-shadow: 0px 2px 3px #b2b2b2;
+      padding-right: 10%;
+    }
+
+    a:hover {
+      transition: 0.2s ease-in-out;
+      color: whitesmoke;
+      animation: pulse 2s infinite;
+    }
+
+    img {
+      width: 3rem;
+      background-color: white;
+      box-shadow: 1px 2px 5px 0px #6a6969;
+
+    }
+
+    .avatar {
+      width: 35%;
+      height: 35%;
+      box-shadow: 1px 2px 5px 0px #6a6969;
+      border-radius: 50%;
+      background-color: white;
+    }
   }
 
   @keyframes pulse {
     0% {
-        text-shadow: 1px 0px 5px white;
+      text-shadow: 1px 0px 5px white;
     }
 
     30% {
-        text-shadow: 2px 0px 3px white;
+      text-shadow: 2px 0px 3px white;
     }
 
     50% {
-        text-shadow: 3px 0px 2px white;
+      text-shadow: 3px 0px 2px white;
     }
 
     70% {
-        text-shadow: 2px 0px 3px white;
+      text-shadow: 2px 0px 3px white;
     }
 
     100% {
-        text-shadow: 1px 0px 5px white;
+      text-shadow: 1px 0px 5px white;
     }
   }
 }

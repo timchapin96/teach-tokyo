@@ -1,45 +1,55 @@
-$slide-content-height: 150px;
+$slide-content-height: 25svh;
+
 .menu {
   width: 7svw;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
-  padding: 10px;
+  padding: 1vw;
+
   img {
-    width: 3vw;
-    height: 3vw;
-    min-width: 30px;
-    min-height: 30px;
+    width: 5vw;
+    height: 8vh;
+    max-width: 100px;
+    max-height: 100px;
   }
 }
+
 .popup-menu {
   position: relative;
-  visibility:hidden;
+  visibility: hidden;
   overflow: hidden;
   height: 0;
   width: 10svw;
   display: flex;
   background-color: white;
   flex-direction: column;
-  align-items: center;
   border-radius: 2px;
   box-shadow: 1px 2px 5px 0px #6a6969;
-  p, a {
+
+  p,
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: black;
     list-style: none;
     width: inherit;
     height: inherit;
     text-align: center;
-    font-size: 1.2rem;
-    margin:0;
-    padding: 10px 0;
+    font-size: 2vw;
+    margin: 0;
+    padding: 5%;
   }
-  p:hover, a:hover {
-    background-color:#b2b2b2;
+
+  p:hover,
+  a:hover {
+    background-color: #b2b2b2;
     cursor: pointer;
   }
+
   p a {
     text-decoration: none;
     text-shadow: 0px 2px 3px #b2b2b2;
@@ -47,12 +57,13 @@ $slide-content-height: 150px;
   }
 
 }
+
 .slide-down {
-  animation: slide-down 0.3s linear both;
+  animation: slide-down 0.2s linear both;
 }
 
 .slide-up {
-  animation: slide-up 0.3s linear both;
+  animation: slide-up 0.2s linear both;
 }
 
 @keyframes slide-down {

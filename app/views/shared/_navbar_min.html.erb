@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
   <div class="menu" data-controller = "menu">
-  <%= image_tag "menu-bars.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
-  <div class="popup-menu">
-    <%= link_to "Home", root_path %>
-    <p data-controller = "new_game menu" data-action = "click->new_game#displayForm click->menu#menuPopup">New</p>
-    <p id = "load-button" data-controller="load menu" data-action="click->load#load click->menu#menuPopup">Load</p>
+    <%= image_tag "menu-bars.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
+    <div class="popup-menu">
+      <%= link_to "Home", root_path %>
+      <p data-controller = "new_game menu" data-action = "click->new_game#displayForm click->menu#menuPopup">New</p>
+      <p id = "load-button" data-controller="load menu" data-action="click->load#load click->menu#menuPopup">Load</p>
+    </div>
   </div>
-</div>
 <% end %>
 <nav class= "navbar-min">
   <div class="nav-elements">
