@@ -16,8 +16,10 @@
       justify-content: center;
       align-items: center;
       color: white;
-      width: 75px;
-      height: 75px;
+      width: 7vw;
+      height: 7vw;
+      max-width: 135px;
+      max-height: 135px;
       background-color: black;
       border-radius: 50%;
       box-shadow: 0px 2px 4px rgb(75, 75, 75);
@@ -27,29 +29,14 @@
   > * h3 {
     margin: 0;
     text-shadow: 0px 2px 4px rgb(168, 168, 168) ;
-    font-size: 2rem;
+    font-size: 3vw;
   }
 
-  @media screen and (min-width: 700px) {
-    @for $i from 1 through 6{
-      .score#{$i} {
-        width: 40px;
-        height: 40px;
-      }
-    }
-    > * h3 {
-      font-size: 1rem;
-    }
-  }
   @media screen and (min-width: 1400px) {
     @for $i from 1 through 6{
-      .score#{$i} {
-        width: 100px;
-        height: 100px;
-      }
     }
     > * h3 {
-      font-size: 3rem;
+      font-size:calc(2rem + 0.6vw) ;
     }
   }
 
