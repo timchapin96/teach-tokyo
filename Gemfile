@@ -80,4 +80,5 @@ gem 'rails_12factor', group: :production
 gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
+gem 'anime-rails', '~> 3.2', '>= 3.2.1.2'
 # gem "byebug"

@@ -9,13 +9,13 @@
       </filter>
     </svg> %>
   </div>
-  <div class="games-container" data-controller = "new_game">
+  <div class="games-container" data-controller = "new_game cloud">
     <%= render "/partials/new_game" %>
     <%= render "/partials/load" %>
-    <div id = "cloud1" class="cloud"></div>
-    <div id = "cloud2" class="cloud"></div>
-    <div id = "cloud3" class="cloud"></div>
-    <h1>日本</h1>
+    <% for i in 1..100 do %>
+      <% position = random_cloud %>
+      <div class="cloud" first-animation="true" style= "top:<%= position[0] %>svh; left:<%= position[1] %>svw" ></div>
+    <% end %>
     <%= show_svg('JapanBoardIndex.svg') %>
     <% if user_signed_in? %>
       <div class="game-buttons">

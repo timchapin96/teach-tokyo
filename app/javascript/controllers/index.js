@@ -24,3 +24,6 @@ application.register("menu", Menu)
 
 import Score from "./score_controller"
 application.register("score", Score)
+
+import Cloud from "./cloud_controller"
+application.register("cloud", Cloud)

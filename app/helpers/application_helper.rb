@@ -8,4 +8,11 @@ module ApplicationHelper
       puts "File not found: app/assets/images/#{path}"
     end
   end
+
+  def random_cloud
+    svh_top = rand(10..90)
+    svw_left = rand(-100..100)
+    scale = rand
+    return [svh_top, svw_left, scale]
+  end
 end
