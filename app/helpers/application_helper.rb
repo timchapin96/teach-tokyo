@@ -12,7 +12,7 @@ module ApplicationHelper
   def random_cloud
     svh_top = rand(10..90)
     svw_left = rand(-100..100)
-    scale = rand
+    scale = rand(2..4)
     return [svh_top, svw_left, scale]
   end
 end

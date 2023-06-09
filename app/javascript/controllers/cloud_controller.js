@@ -47,9 +47,10 @@ export default class extends Controller {
 
     //Did the same thing but adjusted some values
     function loopCycle(cloud) {
+
       let loopTime = 100000;
       let svwStartPosition = parseInt(cloud.style.left.split('s')[0]);
-      let svwToFinish = (100 - svwLeft) + 110;
+      let svwToFinish = (100 - svwStartPosition) + 110;
       let svwPerSecond = loopTime / 100;
       let timeDuration = svwPerSecond * svwToFinish;
 
