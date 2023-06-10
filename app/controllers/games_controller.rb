@@ -40,15 +40,7 @@ class GamesController < ApplicationController
         color = pref["style"]
         @game.boardState[prefecture] = [color, team]
       end
-      if @game.save
-        p "First hi"
-        render "Game Saved"
-        # raise
-        # flash.now[:notice] = "Game Saved successfully"
-        # redirect_to root_path, notice: "Game Saved"
-      else
-        flash[:notice] = "Game failed to save :("
-      end
+      @game.save
     # Update team select on instance of new game
     else
       @team_select = params[:teamSelect]

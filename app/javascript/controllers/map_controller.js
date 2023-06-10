@@ -35,7 +35,7 @@ export default class extends Controller {
         //Set the attribute of team to the color name for later use
         pref.setAttribute("team", prefTeam);
       }
-    this.updateScore();
+      this.updateScore();
     });
   }
 
@@ -79,12 +79,13 @@ export default class extends Controller {
     })
   }
 
-  save(event) {
+  async save(event) {
     if (event) {
       event.preventDefault();
     }
-    let prefData = []
-    const prefectures = document.querySelectorAll(".st0")
+    let prefData = [];
+    const prefectures = document.querySelectorAll(".st0");
+    const notification = document.querySelector(".save-message");
     prefectures.forEach((pref) => {
       if (pref.style.fill === "") {
         pref.style.fill = "rgb(128, 128, 128)"
@@ -93,21 +94,21 @@ export default class extends Controller {
     });
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    fetch(`${window.location.pathname}`, {
-      method: "PATCH",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "X-CSRF-Token": csrfToken
-      },
-      body: JSON.stringify(prefData)
-
-    })
-      .then(response => console.log("second Hi"))
-      .then((data) => {
+    try {
+      const response = await fetch(`${window.location.pathname}`, {
+        method: "PATCH",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken
+        },
+        body: JSON.stringify(prefData)
 
       })
-
+        .then(notification.style.visibility = "visible");
+    } catch(error) {
+      console.log(error);
+    }
   }
 
   hexToRgb(hex) {
@@ -159,5 +160,10 @@ export default class extends Controller {
       let teamScore = document.querySelector(`.${teamColor}-score`);
       teamScore.innerHTML = `<h3>${teamScores[`${teamColor}`].toString()}</h3>`;
     });
+  }
+
+  closeNotification() {
+    const notification = document.querySelector(".save-message");
+    notification.style.visibility = "hidden";
   }
 }
