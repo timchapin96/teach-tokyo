@@ -1,13 +1,14 @@
 import { Controller } from "@hotwired/stimulus"
 import anime from 'animejs/lib/anime.es.js';
 
-const clouds = document.querySelectorAll(".cloud")
 export default class extends Controller {
   connect() {
+    const clouds = document.querySelectorAll(".cloud")
     //This animation creates an endless loop of clouds going form left to right
 
     //For each cloud apply initial animation
     clouds.forEach((cloud) => {
+      console.log("here");
       initialCycle(cloud);
     })
 

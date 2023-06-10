@@ -16,6 +16,7 @@ export default class extends Controller {
     const excludedIds = ["load-button", "new-button", "new-game", "game_title", "new_game"];
     //If menu is open and user clicks anywhere else close menu
     let popupMenu = document.querySelector(".popup-menu");
+    if (!popupMenu) return;
     let popupMenuOpen = popupMenu.classList.contains("slide-down");
     let loadMenu = document.querySelector(".load-games")
     let loadMenuOpen = loadMenu.style.display;
