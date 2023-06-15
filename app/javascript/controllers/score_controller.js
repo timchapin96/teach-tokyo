@@ -9,6 +9,7 @@ export default class extends Controller {
     teams.forEach((team) => {
       let teamScore = document.querySelector(`.${team}-score`);
       teamScore.classList.add("current-team")
+      console.log(teams);
       teamScore.style.backgroundColor = `${team}`;
     });
     teamScores.forEach((teamScore) => {

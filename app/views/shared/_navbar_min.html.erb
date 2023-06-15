@@ -5,6 +5,8 @@
       <%= link_to "Home", root_path %>
       <p data-controller = "new_game menu" data-action = "click->new_game#displayForm click->menu#menuPopup">New</p>
       <p id = "load-button" data-controller="load menu" data-action="click->load#load click->menu#menuPopup">Load</p>
+      <p id = "games-button" data-controller="menu">Games</p>
+      <p id = "options-button" data-controller="options" data-action="click->options#optionsLoad">Options</p>
     </div>
   </div>
 <% end %>

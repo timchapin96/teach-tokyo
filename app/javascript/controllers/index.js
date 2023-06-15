@@ -27,3 +27,6 @@ application.register("score", Score)
 
 import Cloud from "./cloud_controller"
 application.register("cloud", Cloud)
+
+import Options from "./options_controller"
+application.register("options", Options)

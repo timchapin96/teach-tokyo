@@ -1,4 +1,4 @@
-$slide-content-height: 25svh;
+$slide-content-height: 30svh;
 
 .menu {
   width: 7svw;
@@ -9,10 +9,10 @@ $slide-content-height: 25svh;
   padding: 1vw;
 
   img {
-    width: 5vw;
-    height: 8vh;
-    max-width: 100px;
-    max-height: 100px;
+    width: 4vw;
+    height: 6vh;
+    max-width: 50px;
+    max-height: 50px;
   }
 }
 
@@ -21,7 +21,7 @@ $slide-content-height: 25svh;
   visibility: hidden;
   overflow: hidden;
   height: 0;
-  width: 10svw;
+  width: 8svw;
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -39,7 +39,7 @@ $slide-content-height: 25svh;
     width: inherit;
     height: inherit;
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: 0;
     padding: 5%;
   }

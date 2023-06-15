@@ -26,8 +26,8 @@ export default class extends Controller {
     prefectures.forEach((pref) => {
       //If that prefecture has a value in the pair of [rgb, colorName] it means its controlled by a team
       if (board?.[pref.id]?.[1]) {
-        let prefColor = board[pref.id][0];
         let prefTeam = board[pref.id][1];
+        let prefColor = document.querySelector(`[team=${prefTeam}]`).getAttribute("fill");
         //Fill that prefecture color with saved value from boardState
         pref.style.fill = prefColor;
         //Fill that wards dock color
