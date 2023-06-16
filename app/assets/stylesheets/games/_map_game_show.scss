@@ -3,6 +3,23 @@
   flex-direction: column;
   align-items: center;
   background-color: rgb(2, 131, 192);
+  transition: 0.5s ease-in-out;
+}
+.outline1 {
+  fill: rgb(2, 131, 192);
+  stroke:rgb(2, 131, 192);
+  transition: 0.5s ease-in-out;
+}
+.outline2 {
+  fill: rgb(0, 156, 229);
+  stroke: rgb(0, 160, 235);
+  transition: 0.5s ease-in-out;
+}
+.number {
+  fill: rgb(234, 234, 234);
+}
+.route {
+  stroke: black;
 }
 
 .japan-board {
@@ -10,12 +27,17 @@
   transition: 1s;
 }
 
-.japan-board .st0 {
+.japan-board .st0{
   transition: 0.3s ease-in-out;
+  fill:rgb(154, 154, 154);
+}
+.docks {
+  transition: 0.1s ease-in-out;
+  fill:rgb(154, 154, 154);
 }
 
 .japan-board .st0:hover {
-  fill: white !important;
+  fill: white;
 }
 
 .japan-board text {

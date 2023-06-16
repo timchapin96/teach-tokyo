@@ -11,6 +11,8 @@ export default class extends Controller {
   }
   projectorMode() {
     let projectorBody = document.querySelector("body");
+    let outline1 = document.querySelector(".outline1");
+    let outline2 = document.querySelector(".outline2");
     if(this.sliderTarget.checked) {
       projectorBody.classList.add("projector-mode")
     }

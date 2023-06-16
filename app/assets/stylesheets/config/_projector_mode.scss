@@ -1,6 +1,37 @@
 .projector-mode {
   .map-container {
     transition: 0.5s ease-in-out;
-    background-color: rgb(2, 64, 93);
+    background-color: rgb(3, 107, 156);
+  }
+
+  .outline1 {
+    transition: 0.5s ease-in-out;
+    fill: rgb(3, 107, 156);
+    stroke: rgb(3, 107, 156);
+  }
+
+  .outline2 {
+    transition: 0.5s ease-in-out;
+    fill: rgb(3, 128, 185);
+    stroke: rgb(3, 128, 185);
+  }
+
+  .japan-board {
+    .st0:not(.st0[team]) {
+      transition: 0.3s ease-in-out;
+      fill: rgb(99, 99, 99);
+    }
+    .st0:hover {
+      fill: white !important;
+    }
+
+  }
+  .route {
+    stroke: white;
+  }
+
+  .docks {
+    fill: rgb(99, 99, 99);
+    transition: 0.1s ease-in-out;
   }
 }
