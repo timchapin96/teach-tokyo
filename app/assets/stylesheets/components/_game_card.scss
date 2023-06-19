@@ -1,0 +1,19 @@
+.saved-games-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  padding-top: 10svh;
+  justify-content: center;
+
+  .game-card {
+    width: 15svw;
+    height: 10svw;
+    margin: 1svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    box-shadow: 0px 2px 2px lightgray;
+  }
+}

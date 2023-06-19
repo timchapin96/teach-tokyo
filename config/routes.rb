@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   require "sidekiq/web"
   devise_for :users
-  root to: "games#index"
+  root to: "pages#home"
   resources :student_lists do
     resources :students, only: %I[new create edit]
   end
