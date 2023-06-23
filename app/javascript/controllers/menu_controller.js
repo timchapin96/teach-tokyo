@@ -19,8 +19,10 @@ export default class extends Controller {
     if (!popupMenu) return;
     let popupMenuOpen = popupMenu.classList.contains("slide-down");
     let loadMenu = document.querySelector(".load-games")
+    if (!loadMenu) return;
     let loadMenuOpen = loadMenu.style.display;
     let newMenu = document.querySelector(".new-game")
+    if (!newMenu) return;
     let newMenuClosed = newMenu.classList.contains("d-none")
 
     if(popupMenuOpen) {

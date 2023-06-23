@@ -1,7 +1,12 @@
-<div class="saved-games-list">
-  <% @games.each do |game| %>
-    <div class="game-card">
-      <h4><%= link_to game.title, game  %></h4>
-    </div>
+<div class="saved-games-list" data-controller="select">
+  <%= form_tag destroy_multiple_games_path, class: 'game-select', method: :delete do %>
+    <% @games.each do |game| %>
+      <div class="game-card" data-action = "click->#select#handleCheckboxChange" >
+        <%if current_user === game.user %>
+          <%= check_box_tag "games_ids[]", game.id, false, class: 'selectable'%>
+        <% end %>
+        <h4><%= link_to game.title, game%></h4>
+      </div>
+    <% end %>
   <% end %>
 </div>

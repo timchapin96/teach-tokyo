@@ -30,3 +30,6 @@ application.register("cloud", Cloud)
 
 import Options from "./options_controller"
 application.register("options", Options)
+
+import Select from "./select_controller"
+application.register("select", Select)
