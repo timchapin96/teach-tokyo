@@ -3,10 +3,11 @@
     <% @games.each do |game| %>
       <div class="game-card" data-action = "click->#select#handleCheckboxChange" >
         <%if current_user === game.user %>
-          <%= check_box_tag "games_ids[]", game.id, false, class: 'selectable'%>
+          <%= check_box_tag "game_ids[]", game.id, false, class: 'selectable'%>
         <% end %>
         <h4><%= link_to game.title, game%></h4>
       </div>
     <% end %>
+  <%= submit_tag "Delete selected", :class => 'btn btn-primary btn-xs' %>
   <% end %>
 </div>

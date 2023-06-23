@@ -12,6 +12,6 @@ export default class extends Controller {
     let selectedGame = e.target;
     let gameCheckbox = selectedGame.querySelector('input');
     gameCheckbox.checked ? gameCheckbox.checked = false : gameCheckbox.checked = true;
-    // selectedGame.classList.toggle(".selected-card")
+    selectedGame.classList.toggle('selected');
   }
 }

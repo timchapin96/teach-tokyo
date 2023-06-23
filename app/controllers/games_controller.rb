@@ -60,6 +60,14 @@ class GamesController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    if Game.destroy(params[:game_ids])
+      redirect_to games_path, notice: "Games Deleted"
+    else
+      redirect_to games_path, notice: "No games Selected"
+    end
+  end
+
   def game_params
     params.require(:game).permit(:title, :user_id, :boardState, :teamSelect, :newGame, :teamScores)
   end

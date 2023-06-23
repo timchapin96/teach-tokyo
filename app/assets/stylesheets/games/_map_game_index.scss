@@ -3,8 +3,60 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100vw;
+  width: 100svw;
+  height: 100vh;
+  height: 100svh;
+  background-color: rgb(2, 131, 192);
+  z-index: -1;
 }
 
 .japan-board-index{
   width: 90svw;
+}
+
+.load-games {
+  z-index: 1;
+  color: black;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30svw;
+  width: 30vw;
+  text-decoration: none;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 3px 3px 2px rgb(46, 46, 46);
+  overflow-y: scroll;
+}
+.games-list {
+  z-index: 1;
+  height: 70svh;
+  height: 70vh;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.loaded-game{
+  z-index: 1;
+  background-color: white;
+  margin: 5%;
+  padding: 2.5%;
+  text-align: center;
+  #game-title{
+    font-size: 1.5vw;
+  }
+  #game-date{
+    font-size: 1vw;
+  }
+  p {
+    margin-bottom: 1vh;
+  }
+}
+.load-games a {
+  color: black;
 }
