@@ -1,6 +1,12 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 ja:
+  options:
+      home: "ホーム"
+      new: "ニュー"
+      load: "読み込み"
+      games: "ゲーム"
+      options: "オプション"
   devise:
     confirmations:
       confirmed: 'アカウントを登録しました。'

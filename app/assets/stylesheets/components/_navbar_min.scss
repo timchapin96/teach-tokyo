@@ -12,11 +12,31 @@
   align-items: center;
   padding: 1vw;
 
+  .nav-elements {
+    display: flex;
+  }
+
+  .lang {
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0;
+      color: white;
+      margin: 0px 5px;
+    }
+    .vl {
+      border-left: 2px solid rgb(255, 255, 255);
+      opacity: 60%;
+      height: 60%;
+    }
+  }
+
   .profile {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 15svw;
+    height: 100%;
     max-width: 150px;
 
     a {
