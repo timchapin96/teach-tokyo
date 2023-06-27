@@ -2,11 +2,21 @@
 
 en:
   options:
-      home: "Home"
-      new: "New"
-      load: "Load"
-      games: "Games"
-      options: "Options"
+    home: "Home"
+    new: "New"
+    load: "Load"
+    games: "Games"
+    options: "Options"
+  buttons:
+    new: "New"
+    load: "Load"
+    save: "Save"
+    logout: "Logout"
+    login: "Login"
+  save_message:
+    success: "Success!"
+    notification: "Game has been saved"
+    close: "Close"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

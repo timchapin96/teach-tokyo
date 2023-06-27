@@ -7,6 +7,16 @@ ja:
       load: "読み込み"
       games: "ゲーム"
       options: "オプション"
+  buttons:
+    new: "ニュー"
+    load: "読み込み"
+    save: "保存"
+    logout: "ログアウト"
+    login: "ログイン"
+  save_message:
+    success: "保存でしました"
+    notification: ""
+    close: "すすむ"
   devise:
     confirmations:
       confirmed: 'アカウントを登録しました。'

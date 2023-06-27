@@ -25,7 +25,7 @@
   <%= show_svg('JapanBoard.svg') %>
   <% if @game.newGame == false %>
     <div class="game-options">
-      <button class="save game-button" data-action="click->map#save">Save</button>
+      <button class="save game-button" data-action="click->map#save"><%= I18n.t('buttons.save') %></button>
     </div>
     <%= render '/partials/score_keeper' %>
   <% end %>

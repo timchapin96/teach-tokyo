@@ -1,9 +1,9 @@
 <div class="save-message" data-controller = "map">
   <div class="save-body">
     <div class="body-text">
-      <h1>Success!</h1>
-      <p>Game has been saved</p>
+      <h1><%= I18n.t('save_message.success') %></h1>
+      <p><%= I18n.t('save_message.notification') %></p>
     </div>
-    <button data-action = "click->map#closeNotification">OK</button>
+    <button data-action = "click->map#closeNotification"><%= I18n.t('save_message.close') %></button>
   </div>
 </div>
