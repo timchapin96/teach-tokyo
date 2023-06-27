@@ -13,9 +13,9 @@
 <nav class= "navbar-min">
   <div class="nav-elements">
     <div class="lang">
-      <p>EN</p>
+      <%= link_to 'EN', change_locale_path(locale: :en) %>
       <div class="vl"></div>
-      <p>JP</p>
+      <%= link_to 'JP', change_locale_path(locale: :ja) %>
     </div>
     <% if user_signed_in? %>
       <div class="profile">
