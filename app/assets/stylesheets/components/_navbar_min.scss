@@ -29,6 +29,18 @@
       opacity: 60%;
       height: 60%;
     }
+    a:hover {
+      transition: 0.2s;
+      background-color: rgba(255,255,255,0.5);
+      color: black;
+    }
+    a {
+      transition: 0.2s;
+      height: 60%;
+      text-decoration: none;
+      color: white;
+      padding: 0 0.5vw;
+    }
   }
 
   .profile {
