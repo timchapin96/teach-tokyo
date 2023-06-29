@@ -6,16 +6,18 @@ export default class extends Controller {
     let optionsElement = document.querySelector(".options")
     let optionsVis = optionsElement.style.visibility;
     let optionsOpen = optionsVis === "visible";
-    console.log(optionsOpen);
     optionsElement.style.visibility = optionsOpen ? "hidden" : "visible";
   }
   projectorMode() {
     let projectorBody = document.querySelector("body");
+    let gamesContainer = document.querySelector(".games-container");
     if (this.sliderTarget.checked) {
       projectorBody.classList.add("projector-mode")
+      gamesContainer.style.backgroundColor = "rgb(2, 64, 93)";
     }
     else {
       projectorBody.classList.remove("projector-mode")
+      gamesContainer.style.backgroundColor = "#0283c0";
     }
   }
   langSwitch(event) {

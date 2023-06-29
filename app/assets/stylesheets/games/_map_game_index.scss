@@ -8,11 +8,13 @@
   height: 100vh;
   height: 100svh;
   background-color: rgb(2, 131, 192);
+  transition: 0.5s;
   z-index: -1;
 }
 
 .japan-board-index{
   width: 90svw;
+  transition: 0.5s;
 }
 
 .load-games {
