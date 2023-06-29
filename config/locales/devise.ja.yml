@@ -3,20 +3,20 @@
 ja:
   options:
       home: "ホーム"
-      new: "ニュー"
-      load: "読み込み"
-      games: "ゲーム"
-      options: "オプション"
+      new: "新規作成"
+      load: "ロード"
+      games: "ゲームリスト"
+      options: "設定"
   buttons:
-    new: "ニュー"
-    load: "読み込み"
+    new: "新規作成"
+    load: "ロード"
     save: "保存"
     logout: "ログアウト"
     login: "ログイン"
   save_message:
-    success: "保存でしました"
-    notification: ""
-    close: "すすむ"
+    success: "完了"
+    notification: "保存できました"
+    close: "閉じる"
   devise:
     confirmations:
       confirmed: 'アカウントを登録しました。'

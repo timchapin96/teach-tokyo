@@ -3,7 +3,7 @@
     <%= image_tag "menu-bars.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
     <div class="popup-menu">
       <%= link_to I18n.t('options.home'), root_path %>
-      <p data-controller = "new_game menu" data-action = "click->new_game#displayForm click->menu#menuPopup"><%= I18n.t('options.new') %></p>
+      <p data-controller = "new_game menu" data-action = "click->new_game#displayNew click->menu#menuPopup"><%= I18n.t('options.new') %></p>
       <p id = "load-button" data-controller="load menu" data-action="click->load#load click->menu#menuPopup"><%= I18n.t('options.load') %></p>
       <p><%= link_to I18n.t('options.games'), games_path %></p>
       <p id = "options-button" data-controller="options" data-action="click->options#optionsLoad"><%= I18n.t('options.options') %></p>
