@@ -66,10 +66,7 @@ export default class extends Controller {
       teamColor.addEventListener("click", e => {
         const team = e.target.getAttribute("team");
         let color = e.target.getAttribute("fill");
-        let r = this.hexToRgb(color)["r"] / 1.5;
-        let g = this.hexToRgb(color)["g"] / 1.5;
-        let b = this.hexToRgb(color)["b"] / 1.5;
-        let strokeRGB = `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+        let strokeRGB = "rgb(255,255,255)";
         selectedPref.style.fill = color;
         selectedPref.style.stroke = strokeRGB;
         selectedPref.setAttribute("team", team);
@@ -117,15 +114,6 @@ export default class extends Controller {
     } catch(error) {
       console.log(error);
     }
-  }
-
-  hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
   }
 
   hover() {
