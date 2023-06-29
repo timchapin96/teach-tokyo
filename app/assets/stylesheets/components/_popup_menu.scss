@@ -27,6 +27,7 @@ $slide-content-height: 30svh;
   flex-direction: column;
   border-radius: 2px;
   box-shadow: 1px 2px 5px 0px #6a6969;
+  z-index: 1;
 
   p,
   a {

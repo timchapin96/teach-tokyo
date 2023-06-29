@@ -9,7 +9,7 @@
   border-radius: 50px;
   box-shadow: 5px 3px rgba(0, 0, 0, 0.2);
   animation: move 100s infinite;
-
+  z-index: 0;
 }
 
 .cloud:after {

@@ -12,6 +12,7 @@
   <div class="games-container" data-controller = "new_game cloud">
     <%= render "/partials/new_game" %>
     <%= render "/partials/load" %>
+    <%= render "/partials/options" %>
     <% for i in 1..50 do %>
       <% position = random_cloud %>
       <div class="cloud" first-animation="true" style= "top:<%= position[0] %>svh; left:<%= position[1] %>svw; scale: <%= position[2]%>" ></div>
@@ -19,7 +20,7 @@
     <%= show_svg('JapanBoardIndex.svg') %>
     <% if user_signed_in? %>
       <div class="game-buttons">
-        <button id = "new-button" class = "game-button" data-action = "click->new_game#displayForm"><%= I18n.t('buttons.new') %></button>
+        <button id = "new-button" class = "game-button" data-action = "click->new_game#displayNew"><%= I18n.t('buttons.new') %></button>
         <button id = "load-button" class="game-button" data-controller="load" data-action="click->load#load"><%= I18n.t('buttons.load') %></button>
       </div>
     <% end %>

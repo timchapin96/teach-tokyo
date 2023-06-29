@@ -8,7 +8,6 @@ export default class extends Controller {
 
     //For each cloud apply initial animation
     clouds.forEach((cloud) => {
-      console.log("here");
       initialCycle(cloud);
     })
 
