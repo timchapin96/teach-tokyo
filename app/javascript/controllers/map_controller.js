@@ -18,6 +18,14 @@ export default class extends Controller {
   }
 
   loadGame() {
+    let teamSelectDiv = document.querySelector(".team-select");
+    const teamSplashes = document.querySelectorAll(".team-color");
+    if(teamSelectDiv === null) {
+      teamSplashes.forEach((splash) => {
+        splash.classList.remove("select-opacity");
+      })
+    }
+    // e.target.classList.remove("select-opacity");
     //Selects all prefecture SVGS from the map
     const prefectures = document.querySelectorAll(".st0");
     //boardState a variable from the database that contains which territories are owned by which teams

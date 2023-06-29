@@ -7,18 +7,19 @@
     <%= render "/partials/options" %>
   </div>
   <% if @game.newGame == true %>
-    <div class="team-select">
-      <h1>Select Teams</h1>
-      <div class="colors">
-        <div id = "red" class="splatter-select"><%= show_svg("red.svg") %></div>
-        <div id = "blue" class="splatter-select"><%= show_svg("blue.svg") %></div>
-        <div id = "green" class="splatter-select"><%= show_svg("green.svg") %></div>
-        <div id = "purple" class="splatter-select"><%= show_svg("purple.svg") %></div>
-        <div id = "oragne" class="splatter-select"><%= show_svg("orange.svg") %></div>
-        <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
+    <div class="background-blur">
+      <div class="team-select">
+        <h1>Select Teams</h1>
+        <div class="colors">
+          <div id = "red" class="splatter-select"><%= show_svg("red.svg") %></div>
+          <div id = "blue" class="splatter-select"><%= show_svg("blue.svg") %></div>
+          <div id = "green" class="splatter-select"><%= show_svg("green.svg") %></div>
+          <div id = "purple" class="splatter-select"><%= show_svg("purple.svg") %></div>
+          <div id = "oragne" class="splatter-select"><%= show_svg("orange.svg") %></div>
+          <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
+        </div>
+        <button class="game-button" data-controller="teams map" data-action = "click->teams#teamSubmit click->map#firstLoad">Submit</button>
       </div>
-      <button class="game-button" data-controller="teams map" data-action = "click->teams#teamSubmit click->map#firstLoad">Submit</button>
-      <div class="background-blur"></div>
     </div>
   <% end %>
   <%= render '/partials/team_select' %>

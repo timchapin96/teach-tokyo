@@ -9,7 +9,6 @@ export default class extends Controller {
 
   // Select team colors and add to array
   select(e) {
-    console.log(this.errorMessageTarget);
     let teamColor = e.target.getAttribute("team");
     e.target.classList.toggle("select-opacity");
     if (teamSelect.includes(teamColor)) {
