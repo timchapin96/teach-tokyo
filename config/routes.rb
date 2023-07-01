@@ -21,7 +21,7 @@ Rails.application.routes.draw do
         delete 'destroy_multiple'
       end
     end
-    get '/change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
+    patch '/change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
     # patch '/change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

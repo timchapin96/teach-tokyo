@@ -13,9 +13,9 @@
 <nav class= "navbar-min">
   <div class="nav-elements">
     <div class="lang">
-      <%= link_to 'EN', change_locale_path(locale: :en) %>
+      <%= link_to 'EN', change_locale_path(locale: :en), data: {turbo_method:'patch'} %>
       <div class="vl"></div>
-      <%= link_to 'JP', change_locale_path(locale: :ja) %>
+      <%= link_to 'JA', change_locale_path(locale: :ja), data: {turbo_method:'patch'} %>
     </div>
     <% if user_signed_in? %>
       <div class="profile">
