@@ -19,7 +19,7 @@
   align-items: center;
   border-radius: 5px;
   box-shadow: 2px 2px 5px grey;
-  margin: 1rem;
+  margin: 0.5rem;
   transition: 0.2s ease-in-out;
   border:none;
   text-decoration: none;
@@ -29,16 +29,15 @@
   border-style: none;
   color: white;
   background-color: darkblue;
-  font-size: 1.3vw;
-  width: 12svw;
-  height: 6svh;
+  font-size: 1.8vw;
+  width: 60%;
+  height: 30%;
   flex-shrink: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   box-shadow: 2px 2px 5px grey;
-  margin: 1rem;
   transition: 0.2s ease-in-out;
   border:none;
   text-decoration: none;
@@ -48,4 +47,10 @@
 .game-button:hover, .game-button-s:hover {
   background-color: rgb(38, 65, 66);
   color: white;
+}
+
+@media screen and (min-width: 1600px) {
+  .game-button-s {
+    font-size: 2rem;
+  }
 }

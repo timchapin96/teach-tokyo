@@ -24,13 +24,13 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   height: 100%;
   display: relative;
 }
 
 #container {
   display: block;
+  overflow: hidden;
 }
 #vertical-container {
   display: none;
