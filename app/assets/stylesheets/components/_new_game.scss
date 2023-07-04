@@ -8,9 +8,9 @@
   padding: 15px;
   border-radius: 20px;
   width: 30%;
-  height: 40%;
-  max-width: 300px;
-  max-height: 200px;
+  height: 35%;
+  max-width: 450px;
+  max-height: 300px;
   z-index: 1;
   box-shadow: 0px 2px 2px rgb(115, 115, 115);
 }
@@ -21,15 +21,18 @@
   width: 100%;
 }
 .form-label {
-  font-size: 2vw;
+  font-size: 3vw;
   color: darkblue;
   padding-bottom: 1vh;
+  margin: 0;
+  font-weight: bold;
 }
 .form-control {
-  font-size: 80%;
-  line-height: 1.8;
+  height: 50%;
+  font-size: 1.8vw;
   background-color:white ;
   border: 1px solid darkblue;
+  text-align: center;
 }
 
 #new_game {
@@ -37,11 +40,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  height: 100%;
 }
 
 @media screen and (min-width: 1600px) {
-  .form-label {
-    font-size: 2rem;
+  .form-label, .form-control {
+    font-size: 2.5rem;
   }
 }
