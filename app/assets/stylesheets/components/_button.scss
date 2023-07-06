@@ -30,8 +30,10 @@
   color: white;
   background-color: darkblue;
   font-size: 1.8vw;
-  width: 60%;
-  height: 30%;
+  width: 15svw;
+  height: 9svh;
+  max-height: 65px;
+  max-width: 200px;
   flex-shrink: 1;
   display: flex;
   justify-content: center;
