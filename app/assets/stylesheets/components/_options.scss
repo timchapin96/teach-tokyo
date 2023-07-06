@@ -1,7 +1,10 @@
 .options {
   position: absolute;
-  width: 15vw;
-  height: 20vw;
+  width: 30vw;
+  height: 50vh;
+  border-radius: 30px;
+  max-width: 400px;
+  box-shadow: 1px 2px 5px 0px #6a6969;
   background-color: white;
   top: 50%;
   right: 50%;
@@ -14,11 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
-    button {
-      width: 80%;
-      border-radius: 35px;
-    }
+    padding: 10px;
   }
   .projector-mode {
     display: flex;
@@ -42,6 +41,7 @@
 
 /* The slider */
 .slider {
+  scale: 0.5;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -86,4 +86,11 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .slider {
+
+  }
 }
