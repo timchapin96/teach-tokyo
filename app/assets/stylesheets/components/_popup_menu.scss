@@ -21,7 +21,7 @@ $slide-content-height: 30svh;
   visibility: hidden;
   overflow: hidden;
   height: 0;
-  width: 8svw;
+  width: 10svw;
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -35,8 +35,12 @@ $slide-content-height: 30svh;
     // align-items: center;
     // justify-content: center;
     // text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: black;
     list-style: none;
+    text-decoration: none;
     width: inherit;
     height: inherit;
     text-align: center;
@@ -58,6 +62,16 @@ $slide-content-height: 30svh;
   }
 
 }
+
+@media screen and (min-width: 1600px) {
+  .popup-menu {
+    width: 160px;
+    a, p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 
 .slide-down {
   animation: slide-down 0.2s linear both;
