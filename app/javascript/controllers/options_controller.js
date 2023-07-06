@@ -22,7 +22,6 @@ export default class extends Controller {
   }
   langSwitch(event) {
     const lang = event.target.dataset.optionsArgument;
-    console.log(lang);
     fetch('/change_locale,', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
