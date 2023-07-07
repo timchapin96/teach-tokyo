@@ -8,6 +8,11 @@ export default class extends Controller {
 
     //For each cloud apply initial animation
     clouds.forEach((cloud) => {
+      //Set scale based on screen size
+      let vw = screen.width/100;
+      let cloudWidth = cloud.clientWidth;
+      let scale = (rand(10,5) * vw)/cloudWidth;
+      cloud.style.scale = scale;
       initialCycle(cloud);
     })
 
@@ -65,6 +70,11 @@ export default class extends Controller {
         left: `${svwStartPosition}svw`,
         duration: 1
       });
+    }
+
+    //Rand function to get number BETWEEN max and min
+    function rand(max, min) {
+      return Math.floor(Math.random() * (max - min) + min);
     }
   }
 

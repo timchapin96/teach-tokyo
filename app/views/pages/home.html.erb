@@ -15,7 +15,7 @@
     <%= render "/partials/options" %>
     <% for i in 1..50 do %>
       <% position = random_cloud %>
-      <div class="cloud" first-animation="true" style= "top:<%= position[0] %>svh; left:<%= position[1] %>svw; scale: <%= position[2]%>" ></div>
+      <div class="cloud" first-animation="true" style= "top:<%= position[0] %>svh; left:<%= position[1] %>svw;" ></div>
     <% end %>
     <%= show_svg('JapanBoardIndex.svg') %>
     <% if user_signed_in? %>
