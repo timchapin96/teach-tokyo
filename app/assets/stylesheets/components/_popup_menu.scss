@@ -2,9 +2,6 @@ $slide-content-height: 30svh;
 
 .menu {
   width: 7svw;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 2;
   padding: 1vw;
 
@@ -17,7 +14,7 @@ $slide-content-height: 30svh;
 }
 
 .popup-menu {
-  position: relative;
+  position: absolute;
   visibility: hidden;
   overflow: hidden;
   height: 0;
@@ -27,14 +24,10 @@ $slide-content-height: 30svh;
   flex-direction: column;
   border-radius: 2px;
   box-shadow: 1px 2px 5px 0px #6a6969;
-  z-index: 1;
+  z-index: 2;
 
   p,
   a {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;

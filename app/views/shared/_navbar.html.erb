@@ -1,23 +1,31 @@
-<nav class = "nav-bar">
-  <div class="banner">
-    <!-- <a href="/home" class="logo"><img src="/images/TravelBlog_logo/logo_transparent.png" alt=""></a> -->
-    <div class="nav-elements">
-      <% if user_signed_in? %>
-        <div class="navbar-links">
-          <%= link_to "Home", root_path  %>
-          <%= link_to "Lists", student_lists_path %>
-          <%= link_to "Games", games_path %>
+<nav class= "navbar">
+  <div class="nav-elements">
+    <% if user_signed_in? %>
+      <div class="menu" data-controller = "menu">
+        <%= image_tag "menu-bars-main.svg", id: "menu-bar", data: {action: "click->menu#menuPopup"} %>
+        <div class="popup-menu">
+          <%= link_to I18n.t('options.home'), root_path %>
+          <p data-controller = "new_game menu" data-action = "click->new_game#displayNew click->menu#menuPopup"><%= I18n.t('options.new') %></p>
+          <p id = "load-button" data-controller="load menu" data-action="click->load#load click->menu#menuPopup"><%= I18n.t('options.load') %></p>
+          <%= link_to I18n.t('options.games'), games_path %>
+          <p id = "options-button" data-controller="options" data-action="click->options#optionsLoad"><%= I18n.t('options.options') %></p>
         </div>
+      </div>
+    <% end %>
+    <div class="right-side">
+      <div class="lang-options">
+        <%= link_to 'EN', change_locale_path(locale: :en), data: {turbo_method:'patch'} %>
+        <div class="vl"></div>
+        <%= link_to 'JA', change_locale_path(locale: :ja), data: {turbo_method:'patch'} %>
+      </div>
+      <% if user_signed_in? %>
         <div class="profile">
-          <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+          <%= link_to I18n.t('buttons.logout'), destroy_user_session_path, data: {turbo_method: :delete} %>
           <%= image_tag "default_user.png", class: "avatar" %>
         </div>
       <% else %>
-        <div class="navbar-links">
-          <%= link_to "Home", root_path  %>
-        </div>
         <div class="profile">
-          <%= link_to "Login", new_user_session_path %>
+          <%= link_to I18n.t('buttons.login'), new_user_session_path %>
         </div>
       <% end %>
     </div>
