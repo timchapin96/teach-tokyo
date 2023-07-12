@@ -2,8 +2,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 99svw;
-  overflow: hidden;
+  width: 100svw;
+  height: 12svh;
   opacity: 1;
   z-index: 1;
   display: flex;
@@ -11,34 +11,47 @@
   justify-content: flex-end;
   align-items: center;
   padding: 1vw;
+  background-color: none;
 
   .nav-elements {
     display: flex;
     align-items: center;
-    width: 35svw;
+    width: inherit;
     height: 100%;
     justify-content: space-between;
+  }
+
+  .right-side {
+    display: flex;
+    width: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   .lang-options {
     display: flex;
     align-items: center;
+    padding-right: 3vw;
+
     p {
       margin: 0;
       color: white;
       margin: 0px 5px;
     }
+
     .vl {
       border-left: 2px solid rgb(255, 255, 255);
       opacity: 100%;
       height: 5vh;
       max-height: 60px;
     }
+
     a:hover {
       transition: 0.2s;
-      background-color: rgba(255,255,255,0.7);
+      background-color: rgba(255, 255, 255, 0.7);
       color: black;
     }
+
     a {
       transition: 0.2s;
       text-decoration: none;
@@ -48,21 +61,19 @@
     }
   }
 
-  .profile {
+  .sign-in {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: fit-content;
     height: 100%;
     max-width: 220px;
-
 
     a {
       transition: 0.2s ease-in-out;
       text-decoration: none;
       color: white;
       text-shadow: 0px 2px 3px #b2b2b2;
-      padding-right: 10%;
       max-width: fit-content;
     }
 
@@ -71,62 +82,82 @@
       color: whitesmoke;
       animation: pulse 2s infinite;
     }
-
-    img {
-      width: 3rem;
-      background-color: white;
-      box-shadow: 1px 2px 5px 0px #6a6969;
-
-    }
-
-    .avatar {
-      width: 5svw;
-      box-shadow: 1px 2px 5px 0px #6a6969;
-      border-radius: 50%;
-      background-color: white;
-      max-width: 75px;
-    }
   }
 
-  //Font size control
-  .profile a, .lang-options a {
-    font-size: 2vw;
-  }
-  @media screen and (min-width: 1600px) {
-    .profile a, .lang-options a {
-      font-size: 1.5rem;
-    }
-    .lang-options {
-      padding-right: 1.5vw;
-      vl {
+    .profile {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: fit-content;
+      height: 100%;
+      max-width: 220px;
+
+      a {
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+        color: white;
+        text-shadow: 0px 2px 3px #b2b2b2;
+        max-width: fit-content;
+      }
+
+      a:hover {
+        transition: 0.2s ease-in-out;
+        color: whitesmoke;
+        animation: pulse 2s infinite;
+      }
+
+      img {
+        width: 3rem;
+        background-color: white;
+        box-shadow: 1px 2px 5px 0px #6a6969;
 
       }
+
+      .avatar {
+        width: 5svw;
+        box-shadow: 1px 2px 5px 0px #6a6969;
+        border-radius: 50%;
+        background-color: white;
+        max-width: 75px;
+        margin-left: 2vw;
+      }
     }
-    .nav-elements {
-      justify-content: flex-end;
+
+    //Font size control
+    .profile a,
+    .sign-in a,
+    .lang-options a {
+      font-size: 2vw;
+    }
+
+    @media screen and (min-width: 1400px) {
+
+      .profile a,
+      .lang-options a {
+        font-size: 1.5rem;
+      }
+    }
+
+
+    @keyframes pulse {
+      0% {
+        text-shadow: 1px 0px 5px white;
+      }
+
+      30% {
+        text-shadow: 2px 0px 3px white;
+      }
+
+      50% {
+        text-shadow: 3px 0px 2px white;
+      }
+
+      70% {
+        text-shadow: 2px 0px 3px white;
+      }
+
+      100% {
+        text-shadow: 1px 0px 5px white;
+      }
     }
   }
-
-
-  @keyframes pulse {
-    0% {
-      text-shadow: 1px 0px 5px white;
-    }
-
-    30% {
-      text-shadow: 2px 0px 3px white;
-    }
-
-    50% {
-      text-shadow: 3px 0px 2px white;
-    }
-
-    70% {
-      text-shadow: 2px 0px 3px white;
-    }
-
-    100% {
-      text-shadow: 1px 0px 5px white;
-    }
-  }
-}
