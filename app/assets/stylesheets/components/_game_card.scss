@@ -18,9 +18,12 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-content: center;
+  align-content: space-between;
   padding-top: 15svh;
+  padding-bottom: 5svh;
   justify-content: center;
+  height: 100svh;
+  overflow: scroll;
 
   // .selectable {
   //   visibility: hidden;
