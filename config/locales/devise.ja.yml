@@ -13,6 +13,10 @@ ja:
     save: "保存"
     logout: "ログアウト"
     login: "ログイン"
+    delete: "消す"
+  delete_message:
+    success: "消してしまいました"
+    no_select: "ゲームは選ばれていません"
   save_message:
     success: "完了"
     notification: "保存できました"

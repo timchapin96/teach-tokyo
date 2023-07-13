@@ -16,14 +16,14 @@
 
 .game-select {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: space-between;
+  flex-direction: column;
+  align-content: center;
   padding-top: 15svh;
   padding-bottom: 5svh;
-  justify-content: center;
+  justify-content: space-between;
   height: 100svh;
   overflow: scroll;
+  align-items: center;
 
   // .selectable {
   //   visibility: hidden;
