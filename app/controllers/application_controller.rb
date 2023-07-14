@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   # This was really annoying
   def redirect_to_back(options = {})
     uri = request.referer
-    p uri
     locale = params[:locale]
     uri = uri.split('/')
     uri[3] = locale

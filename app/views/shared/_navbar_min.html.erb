@@ -1,4 +1,4 @@
-<nav class= "navbar-min">
+<nav class= "navbar-min <%= navbarcolor if defined?(navbarcolor) %>">
   <div class="nav-elements">
     <% if user_signed_in? %>
       <div class="menu" data-controller = "menu">
@@ -10,10 +10,6 @@
           <%= link_to I18n.t('options.games'), games_path %>
           <p id = "options-button" data-controller="options" data-action="click->options#optionsLoad"><%= I18n.t('options.options') %></p>
         </div>
-      </div>
-      <% else %>
-      <div class="logo">
-        <h1></h1>
       </div>
     <% end %>
     <div class="right-side">
@@ -28,7 +24,7 @@
           <%= image_tag "default_user.png", class: "avatar" %>
         </div>
       <% else %>
-        <div class="sign-in">
+        <div class="profile">
           <%= link_to I18n.t('buttons.login'), new_user_session_path %>
         </div>
       <% end %>

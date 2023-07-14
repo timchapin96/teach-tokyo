@@ -1,4 +1,4 @@
-$slide-content-height: 30svh;
+$slide-content-height: 35vh;
 
 .menu {
   width: 7svw;
@@ -56,11 +56,18 @@ $slide-content-height: 30svh;
 
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 2000px) {
   .popup-menu {
-    width: 160px;
-    a, p {
-      font-size: 1.5rem;
+
+    a,
+    p {
+      font-size: 2rem;
+    }
+  }
+  .menu {
+    img {
+      max-width: 75px;
+      max-height: 75px;
     }
   }
 }
