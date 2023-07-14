@@ -13,6 +13,10 @@ en:
     save: "Save"
     logout: "Logout"
     login: "Login"
+    delete: "Delete"
+  delete_message:
+    success: "Games Deleted"
+    no_select: "No Games Selected"
   save_message:
     success: "Success!"
     notification: "Game has been saved"

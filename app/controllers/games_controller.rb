@@ -61,10 +61,12 @@ class GamesController < ApplicationController
   end
 
   def destroy_multiple
-    if Game.destroy(params[:game_ids])
-      redirect_to games_path, notice: "Games Deleted"
+    if params[:game_ids]
+      Game.destroy(params[:game_ids])
+      redirect_to games_path, notice: t('delete_message.success')
     else
-      redirect_to games_path, notice: "No games Selected"
+      p "Delete fail"
+      redirect_to games_path, notice: t('delete_message.no_select')
     end
   end
 

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .links {
   width: 100%;
   height: auto;
@@ -24,14 +28,15 @@ html {
 }
 
 body {
-  height: 100%;
-  display: relative;
+  height: 100svh;
+  width: 100svw;
 }
 
 #container {
   display: block;
   overflow: hidden;
 }
+
 #vertical-container {
   display: none;
   position: absolute;
@@ -42,15 +47,24 @@ body {
 }
 
 @media only screen and (orientation:portrait) {
-  #container, .navbar-min, .menu, .map-container {
+
+  #container,
+  .navbar-min,
+  .menu,
+  .map-container,
+  .saved-games-list,
+  .options-body,
+  .slide-down {
     // height: 100vw;
     // -webkit-transform: rotate(90deg);
     // -moz-transform: rotate(90deg);
     // -o-transform: rotate(90deg);
     // -ms-transform: rotate(90deg);
     // transform: rotate(90deg);
-    visibility:hidden;
+    animation: fade-out 0.2s linear;
+    animation-fill-mode: forwards;
   }
+
   #vertical-container {
     display: block;
   }
@@ -63,6 +77,34 @@ body {
     -o-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
+    // animation: fade-in 3s linear;
+    // animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 

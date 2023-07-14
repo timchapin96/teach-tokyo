@@ -2,11 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["slider"]
+  //The slider was being a pain with loading. So i had to set the whole containing div to display none.
   optionsLoad() {
     let optionsElement = document.querySelector(".options")
+    let optionsBody = document.querySelector(".options-body")
     let optionsVis = optionsElement.style.visibility;
     let optionsOpen = optionsVis === "visible";
     optionsElement.style.visibility = optionsOpen ? "hidden" : "visible";
+    //Then I toggle display to flex via show-display class
+    optionsBody.classList.toggle("show-display")
   }
   projectorMode() {
     let projectorBody = document.querySelector("body");
