@@ -1,3 +1,7 @@
+.show-display {
+  display: flex !important;
+}
+
 .options {
   position: absolute;
   width: 30vw;
@@ -13,13 +17,14 @@
   z-index: 1;
   .options-body {
     height: inherit;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
   }
   .projector-mode {
+    display: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +32,6 @@
 }
 .switch {
   position: relative;
-  display: inline-block;
   width: 60px;
   height: 34px;
 }
@@ -86,11 +90,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-
-@media screen and (max-width: 1600px) {
-  .slider {
-
-  }
 }
