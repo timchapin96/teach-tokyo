@@ -84,17 +84,26 @@ export default class extends Controller {
     })
   }
 
+  //On Save button click iterate over every prefecture and take fill color and team name and send as patch request.
   async save(event) {
     if (event) {
       event.preventDefault();
     }
     let prefData = [];
+    const selectedTeams = this.gameValue.selectedTeams;
     const prefectures = document.querySelectorAll(".st0");
     const notification = document.querySelector(".save-message");
+
     prefectures.forEach((pref) => {
+      let prefTeam = pref.getAttribute("team");
+      //Check if fill is empty. Not sure why I did this. Look into it later Tim.
       if (pref.style.fill === "") {
-        pref.style.fill = "rgb(128, 128, 128)"
+        pref.style.fill = "rgb(128, 128, 128)";
       }
+      //Check if team exists in db's selected teams. If not, throw
+      if(prefTeam && !selectedTeams.includes(prefTeam)) {
+        throw new Error(`${pref.getAttribute("team")} was not selected at the beginning of the game`, {statusCode: 422});
+      };
       prefData.push({ prefecture: pref.id, style: pref.style.fill, color: pref.getAttribute("team") });
     });
 
