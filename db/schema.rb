@@ -10,53 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_074715) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_24_044721) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "title"
+    t.string "turn"
+    t.integer "round"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "boardState", default: {}
     t.bigint "user_id", null: false
-    t.string "selectedTeams", default: [], array: true
     t.boolean "newGame", default: true
-    t.json "teamScores", default: {}
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.string "content"
-    t.bigint "chatroom_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "student_lists", force: :cascade do |t|
-    t.string "list_name"
-    t.string "banner"
-    t.string "description"
-    t.integer "user_id"
-    t.integer "student_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
+  create_table "teams", force: :cascade do |t|
+    t.integer "score"
     t.string "name"
-    t.integer "student_list_id"
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "game_id", null: false
+    t.index ["game_id"], name: "index_teams_on_game_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,6 +64,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_074715) do
   end
 
   add_foreign_key "games", "users"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
+  add_foreign_key "teams", "games"
 end
