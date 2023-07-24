@@ -22,8 +22,7 @@ class GamesController < ApplicationController
   def show
     @games = Game.where(user_id: current_user)
     @game = Game.find(params[:id])
-    @game_teams = @game.selectedTeams
-    @team_score = @game.teamScores
+    @game_teams = @game.teams
   end
 
   def edit
