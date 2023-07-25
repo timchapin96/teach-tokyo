@@ -3,7 +3,8 @@ import { teamSubmit } from './teams_controller'
 export default class extends Controller {
   static targets = ["japan", "select"];
   static values = {
-    game: Object
+    game: Object,
+    scores: Array
   };
 
   connect() {
@@ -90,7 +91,12 @@ export default class extends Controller {
       event.preventDefault();
     }
     let prefData = [];
-    const selectedTeams = this.gameValue.selectedTeams;
+
+    //Map over scoresValue, which is a array of objects
+    const selectedTeams = this.scoresValue.map((team) => {
+      return team.color
+    });
+
     const prefectures = document.querySelectorAll(".st0");
     const notification = document.querySelector(".save-message");
 

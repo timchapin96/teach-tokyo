@@ -7,16 +7,11 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|ja/ do
     devise_for :users
 
-    resources :student_lists do
-      resources :students, only: %I[new create edit]
-    end
-
     authenticate :user, ->(user) { user.admin? } do
       mount Sidekiq::Web => '/sidekiq'
     end
-
-    resources :chatrooms, only: :show
     resources :games do
+      resources :teams
       collection do
         delete 'destroy_multiple'
       end

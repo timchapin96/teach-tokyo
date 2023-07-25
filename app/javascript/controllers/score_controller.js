@@ -7,9 +7,9 @@ export default class extends Controller {
     const teams = this.teamsValue;
     const teamScores = document.querySelectorAll(".score");
     teams.forEach((team) => {
-      let teamScore = document.querySelector(`.${team}-score`);
+      let teamScore = document.querySelector(`.${team.color}-score`);
       teamScore.classList.add("current-team")
-      teamScore.style.backgroundColor = `${team}`;
+      teamScore.style.backgroundColor = `${team.color}`;
     });
     teamScores.forEach((teamScore) => {
       if (!teamScore.classList.contains("current-team")) {

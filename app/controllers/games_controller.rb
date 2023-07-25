@@ -22,7 +22,8 @@ class GamesController < ApplicationController
   def show
     @games = Game.where(user_id: current_user)
     @game = Game.find(params[:id])
-    @game_teams = @game.teams
+    @game_teams = Team.where(game_id: @game.id)
+    # @game_teams = Team.where(game_id: @game.id)
   end
 
   def edit
@@ -30,8 +31,10 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params["id"])
+    @team_select = params[:teamSelect]
     # Update game on save button click
     if params["_json"]
+      pp "WE ARE IN THE WRONG SPOT"
       prefecture_data = params["_json"]
       prefecture_data.each do |pref|
         team = pref["color"]
@@ -40,23 +43,29 @@ class GamesController < ApplicationController
         @game.boardState[prefecture] = [color, team]
       end
       @game.save
-    # Update team select on instance of new game
-    else
-      @team_select = params[:teamSelect]
-      @game.selectedTeams = @team_select
-      @game.newGame = false
-      if @game.save
-        p "Teams Selected"
-      else
-        p "Error! :("
+      # Create teams for new game
+    end
+    if @team_select.present?
+      @team_select.each do |team|
+        new_team = Team.new(color: team, game_id: @game.id)
+        if new_team.save
+          pp "Team saved"
+        else
+          pp "Error saving team: #{new_team.errors.full_messages}"
+        end
       end
+    end
+
+    @game.newGame = false
+    if @game.save
+      p "Teams Selected"
+    else
+      p "Error! :("
     end
   end
 
   def destroy
-    if @game.destroy[params[:games_id]]
-      redirect_to games_path, notice: "Game Deleted"
-    end
+    redirect_to games_path, notice: "Game Deleted" if @game.destroy[params[:games_id]]
   end
 
   def destroy_multiple
