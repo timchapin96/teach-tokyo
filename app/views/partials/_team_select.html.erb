@@ -1,7 +1,7 @@
 <div class="color-select">
     <div id="select">
-      <% @game.teams.each do |team| %>
-        <div id = "<% team %>" class="splatter"><%= show_svg("#{team}.svg") %></div>
+      <% @game_teams.each do |team| %>
+        <div id = "<% team.color %>" class="splatter"><%= show_svg("#{team.color}.svg") %></div>
       <% end %>
     </div>
   </div>

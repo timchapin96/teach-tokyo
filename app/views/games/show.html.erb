@@ -1,4 +1,4 @@
-<div class="map-container" data-controller="map" data-map-game-value="<%= @game.to_json %>" >
+<div class="map-container" data-controller="map" data-map-game-value="<%= @game.to_json %>" data-map-scores-value="<%= @game_teams.to_json %>" >
   <div class="partials" data-controller = "new_game">
     <%= render "/partials/new_game" %>
     <%= render "/partials/load" %>
