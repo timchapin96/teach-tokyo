@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 let roundLength = 0;
-const turnOrder = [];
 
 export default class extends Controller {
   static targets = ["roundPopup", "show"];
@@ -12,7 +11,7 @@ export default class extends Controller {
   connect() {
     // const shuffled = this.shuffle();
     // console.log(shuffled);
-    roundLength = this.teamsValue.length;
+    roundLength = this.teams.length;
   };
 
   round() {
@@ -21,6 +20,7 @@ export default class extends Controller {
 
   //Team can pick one territory, then it moves on to next teams turn
   turn() {
+
 
   };
   //When round is over add 1 to round start from top of the order

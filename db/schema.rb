@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_28_065554) do
     t.json "boardState", default: {}
     t.bigint "user_id", null: false
     t.boolean "newGame", default: true
-    t.string "turn_order", default: [], array: true
+    t.json "turn_order", default: {}
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 

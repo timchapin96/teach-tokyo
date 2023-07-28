@@ -32,7 +32,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params["id"])
-    @team_select = params[:teamSelect]
+    @team_select = params[:teams]
     # Update game on save button click
     if params["_json"]
       pp "WE ARE IN THE WRONG SPOT"
@@ -57,9 +57,10 @@ class GamesController < ApplicationController
         end
       end
       @game.round = 1
+      @game.turn_order = params[:turnOrder]
+      @game.newGame = false
     end
 
-    @game.newGame = false
     if @game.save
       p "Teams Selected"
     else
