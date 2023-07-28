@@ -19,7 +19,7 @@
           <div id = "oragne" class="splatter-select"><%= show_svg("orange.svg") %></div>
           <div id = "black" class="splatter-select"><%= show_svg("black.svg") %></div>
         </div>
-        <button class="game-button" data-controller="teams map" data-action = "click->teams#teamSubmit click->map#firstLoad">Submit</button>
+        <button class="game-button" data-controller="teams map" data-teams-selectedTeams-value = <%= @game_teams %> data-action = "click->teams#teamSubmit click->map#firstLoad">Submit</button>
       </div>
     </div>
   <% end %>

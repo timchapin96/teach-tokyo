@@ -1,32 +1,37 @@
 import { Controller } from "@hotwired/stimulus"
-const teamSelect = [];
+const teams = [];
 const location = window.location.pathname
 const errorMessage = document.querySelector(".error-message")
 
 export default class extends Controller {
-  //set targets
-  // static target = ["errorMessage"] //Error message not found. Ask about later
+  static target = ["errorMessage"] //Error message not found. Ask about later
+
+  static values = {
+    teams: Object
+  }
 
   // Select team colors and add to array
   select(e) {
     let teamColor = e.target.getAttribute("team");
     e.target.classList.toggle("select-opacity");
-    if (teamSelect.includes(teamColor)) {
-      teamSelect.splice(teamSelect.indexOf(teamColor), 1);
+    if (teams.includes(teamColor)) {
+      teams.splice(teams.indexOf(teamColor), 1);
     }
     else {
-      teamSelect.push(teamColor);
+      teams.push(teamColor);
     }
   }
   //Submit teams and start game
   teamSubmit() {
+    //shuffle turn order
+    let turnOrder = this.shuffle(teams);
     // Get the div containing the team options
     let teamSelectDiv = document.querySelector(".team-select");
     // Get all the team colors
     let teamColors = document.querySelectorAll(".team-color");
 
     //If teams Selected is more than 1, submit patch request
-    if (teamSelect.length > 1) {
+    if (teams.length > 1) {
       // Send PATCH request to update the database with the teams selected
       const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
       fetch(`${window.location.pathname}`, {
@@ -36,7 +41,7 @@ export default class extends Controller {
           "Content-Type": "application/json",
           "X-CSRF-Token": csrfToken
         },
-        body: JSON.stringify({ teamSelect: teamSelect })
+        body: JSON.stringify({ teams: teams, turnOrder: turnOrder })
       })
         .then((response) => {
           console.log("Team select submitted successfully");
@@ -53,5 +58,28 @@ export default class extends Controller {
     else {
       errorMessage.style.visibility = "visible"
     }
+  }
+
+  //Randomize teams for a random turn order
+  //Fisher-Yates Shuffle
+  shuffle(teamsArray) {
+    let tempTeams = [...teamsArray];
+    console.log();
+
+    let currentIndex = tempTeams.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [tempTeams[currentIndex], tempTeams[randomIndex]] = [
+        tempTeams[randomIndex], tempTeams[currentIndex]];
+    }
+
+    return tempTeams;
   }
 }

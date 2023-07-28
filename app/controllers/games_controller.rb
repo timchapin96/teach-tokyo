@@ -47,6 +47,7 @@ class GamesController < ApplicationController
       # Create teams for new game
     end
     if @team_select.present?
+      pp @team_select
       @team_select.each do |team|
         new_team = Team.new(color: team, game_id: @game.id)
         if new_team.save
