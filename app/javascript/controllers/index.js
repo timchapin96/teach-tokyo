@@ -33,3 +33,6 @@ application.register("options", Options)
 
 import Select from "./select_controller"
 application.register("select", Select)
+
+import Round from "./round_controller"
+application.register("round", Round)

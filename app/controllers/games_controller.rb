@@ -23,6 +23,7 @@ class GamesController < ApplicationController
     @games = Game.where(user_id: current_user)
     @game = Game.find(params[:id])
     @game_teams = Team.where(game_id: @game.id)
+    @game_round = @game.round
     # @game_teams = Team.where(game_id: @game.id)
   end
 
@@ -54,6 +55,7 @@ class GamesController < ApplicationController
           pp "Error saving team: #{new_team.errors.full_messages}"
         end
       end
+      @game.round = 1
     end
 
     @game.newGame = false
