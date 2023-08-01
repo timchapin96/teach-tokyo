@@ -1,3 +1,3 @@
 <dialog open data-controller="round" data-round-target = "roundPopup" data-round-teams-value = "<%= @game_teams.to_json %>" data-round-game-value = "<%= @game.to_json %>">
-  <h3>Round <%= @game_round %></h3>
+  <h3 data-round-round-value = <%= @game_round %> >Round <span id="current-round"> <%= @game_round %></span></h3>
 </dialog>

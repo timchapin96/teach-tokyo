@@ -1,11 +1,15 @@
 import { Controller } from "@hotwired/stimulus";
-import { teamSubmit } from './teams_controller'
+
 export default class extends Controller {
   static targets = ["japan", "select"];
   static values = {
     game: Object,
     scores: Array
   };
+
+  test() {
+    console.log("connected");
+  }
 
   connect() {
     this.loadGame();
@@ -48,10 +52,12 @@ export default class extends Controller {
     });
   }
 
+
+  //Strange error where prefectures is getting two sets of the same node list.
   colorFill() {
     const select = document.querySelector(".color-select")
     const teamSelect = document.querySelectorAll("#select div")
-    const prefectures = document.querySelectorAll(".st0")
+    const prefectures = document.querySelectorAll(".pref-select")
 
     // Get ward selected
     let selectedPref = "";
@@ -62,7 +68,7 @@ export default class extends Controller {
       })
     });
 
-    // On Color click change background of ward to that colors id
+    // On Color click change background of prefecture to that colors id
     teamSelect.forEach((teamColor) => {
       teamColor.addEventListener("click", e => {
         const team = e.target.getAttribute("team");
