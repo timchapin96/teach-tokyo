@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   def index
     @games = Game.where(user_id: current_user)
     @game = Game.new
+    @demo_user = User.find_by_email("chapin.timothy@yahoo.com")
   end
 
   def new
