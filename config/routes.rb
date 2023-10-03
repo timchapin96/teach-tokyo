@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   scope "(:locale)", locale: /en|ja/ do
     devise_for :users
-
+    post 'demo_user/sign_in', to: 'custom_sessions#create', as: 'demo_user_login'
     resources :student_lists do
       resources :students, only: %I[new create edit]
     end

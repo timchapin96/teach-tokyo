@@ -5,4 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-User.create(email: "chapin.timothys@gmail.com", password: "123456")
+demo_user = User.find_by_email("chapin.timothy@yahoo.com")
+demo_user.destroy if demo_user
+User.create!(email: "chapin.timothy@yahoo.com", password: "123456", confirmed_at: Time.now)
+p "Seed done!"
