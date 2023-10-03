@@ -14,6 +14,10 @@ ja:
     logout: "ログアウト"
     login: "ログイン"
     delete: "消す"
+    demo: "デモ"
+  demo_message:
+    success: "デモモード中です。このモードで保存したゲームは１０日後に自動で消されます。"
+    fail: "無理"
   delete_message:
     success: "消してしまいました"
     no_select: "ゲームは選ばれていません"
