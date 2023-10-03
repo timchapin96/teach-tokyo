@@ -5,9 +5,9 @@ class CustomSessionsController < ApplicationController
     if demo_user
       demo_user.skip_confirmation!
       sign_in(demo_user)
-      redirect_to root_path, notice: "Demo mode engaged! Any saved games will be automatically deleted in 10 days."
+      redirect_to root_path, notice: t('demo_message.success')
     else
-      redirect_to root_path, alert: "Demo currently unavailable"
+      redirect_to root_path, alert: t('demo_message.fail')
     end
   end
 end

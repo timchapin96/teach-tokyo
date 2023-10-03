@@ -14,6 +14,10 @@ en:
     logout: "Logout"
     login: "Login"
     delete: "Delete"
+    demo: "Demo"
+  demo_message:
+    success: "Demo mode engaged! Any saved games will be automatically deleted in 10 days."
+    fail: "Demo currently unavailable"
   delete_message:
     success: "Games Deleted"
     no_select: "No Games Selected"

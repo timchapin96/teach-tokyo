@@ -24,7 +24,7 @@
         <button id = "load-button" class="game-button" data-controller="load" data-action="click->load#load"><%= I18n.t('buttons.load') %></button>
       </div>
     <% else %>
-      <%= button_to "Demo", demo_user_login_path, :method => :post, class: "game-button" %>
+      <%= button_to I18n.t('buttons.demo'), demo_user_login_path, :method => :post, class: "game-button" %>
     <% end %>
   </div>
 </div>
