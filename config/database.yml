@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: pair_maker_production
-  username: pair_maker
+  database: tokyo-school-production
+  username: tokyo-school
   password: <%= ENV["PAIR_MAKER_DATABASE_PASSWORD"] %>
